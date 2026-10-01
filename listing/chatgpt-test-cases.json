@@ -1,0 +1,83 @@
+{
+  "_about": "Test cases for the ChatGPT plugins dashboard: five positive, three negative. Attachments are public synthetic sessions, not a real driver.",
+  "positive": [
+    {
+      "id": "p1-diagnose",
+      "scenario": "A Rush SR owner diagnoses a car that will not start.",
+      "prompt": "My Rush SR won't start. The dash shows N but the engine won't crank. What could be wrong?",
+      "expectedTools": [
+        "diagnose_symptom"
+      ],
+      "expectedResult": "The manual section \"Car Won't Start - Dash Shows N but Engine Won't Crank\" with a manual.rush.sr link, then a line \"Built by Rush Auto Works\" linking to rushautoworks.com.",
+      "attachments": []
+    },
+    {
+      "id": "p2-schedule",
+      "scenario": "An owner asks for a service interval.",
+      "prompt": "How often should I change the brake fluid on my Rush SR?",
+      "expectedTools": [
+        "maintenance_schedule"
+      ],
+      "expectedResult": "The \"Brake Fluid\" section and the monthly \"Inspecting and Bleeding Brakes\" section, each with a manual.rush.sr link.",
+      "attachments": []
+    },
+    {
+      "id": "p3-procedure",
+      "scenario": "An owner asks for the steps of a procedure.",
+      "prompt": "How do I bleed the brakes on my Rush SR?",
+      "expectedTools": [
+        "lookup_procedure"
+      ],
+      "expectedResult": "The \"Inspecting and Bleeding Brakes\" sections with the steps and manual.rush.sr links.",
+      "attachments": []
+    },
+    {
+      "id": "p4-analyze",
+      "scenario": "A driver analyzes an AiM RaceStudio export.",
+      "prompt": "Analyze my AiM session: lap times, best lap and consistency.",
+      "expectedTools": [
+        "analyze_session"
+      ],
+      "expectedResult": "Best lap 4 in 45.793 s, theoretical best 45.547 s, 4 valid laps, one line per lap with lap 1 excluded as the out-lap and lap 6 as the in-lap.",
+      "attachments": [
+        "https://raw.githubusercontent.com/Rush-Auto-Works/llm-plugins/main/examples/synthetic-session-a.csv"
+      ]
+    },
+    {
+      "id": "p5-compare-sessions",
+      "scenario": "Two drivers compare their sessions on the same track.",
+      "prompt": "Compare these two sessions: who was faster and where?",
+      "expectedTools": [
+        "compare_sessions"
+      ],
+      "expectedResult": "Delta A minus B of -1.416 s, best laps 45.793 s and 47.209 s, top speed A 180.0 km/h and B 174.6 km/h, the sectors A gains and loses, brake zones and corner minimum speeds.",
+      "attachments": [
+        "https://raw.githubusercontent.com/Rush-Auto-Works/llm-plugins/main/examples/synthetic-session-a.csv",
+        "https://raw.githubusercontent.com/Rush-Auto-Works/llm-plugins/main/examples/synthetic-session-b.csv"
+      ]
+    }
+  ],
+  "negative": [
+    {
+      "id": "n1-other-car",
+      "unsupported": "Maintenance questions about other vehicles.",
+      "prompt": "How do I change the oil on a Honda Civic?",
+      "expectedBehavior": "No Rush SR tool is called. The assistant answers from its own knowledge or says it has no source for that car."
+    },
+    {
+      "id": "n2-sales",
+      "unsupported": "Pricing and ordering are not in the owner's manual.",
+      "prompt": "How much does a Rush SR cost, and can I order one?",
+      "expectedBehavior": "No Rush SR tool is called. The assistant does not invent a price and points to rushautoworks.com."
+    },
+    {
+      "id": "n3-binary-xrk",
+      "unsupported": "AiM .xrk binary logs. The lap server reads RaceStudio CSV exports only.",
+      "prompt": "Analyze my laps from this .xrk file.",
+      "attachments": [
+        "any .xrk file"
+      ],
+      "expectedBehavior": "If the tool is called, it returns a clear message that this is a binary .xrk file and the user should export CSV from RaceStudio; no analysis is invented."
+    }
+  ]
+}
