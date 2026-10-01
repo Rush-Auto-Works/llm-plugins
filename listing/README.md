@@ -48,6 +48,12 @@ OpenAI's page says a package can declare several MCP servers but only one can be
 
 Scope: the two MCP servers only. ChatGPT plugins can carry a `skills/` folder, but whether a bundled script can run in ChatGPT's sandbox is unverified, so the `.xrk` skill stays Claude-only until it is tested.
 
+## Portal gotchas
+
+- Claude plugin: the validator reads the plugin path, so set it to `plugin`, not the repo root. It wants a PNG of 512 to 2048 px at `plugin/.claude-plugin/icon.png` (no `icon` key needed). Any `os.environ` read anywhere in the bundle, tests included, puts a "uses a credential" policy hold on a plugin that also calls a remote server, so tests live in `tests/` at the repo root. `homepage`, `documentationUrl`, `supportUrl`, `termsOfServiceUrl` and `privacyPolicyUrl` in `plugin.json` are read by the directory only.
+- Claude plugin: its servers show "Unregistered" until the matching connectors are listed in the directory.
+- ChatGPT: the plugin page inside a ChatGPT workspace has no MCPs tab. The draft, its MCPs tab and the domain token live at https://platform.openai.com/plugins, and that portal asks for ID verification.
+
 ## Pre-flight
 
 ```
