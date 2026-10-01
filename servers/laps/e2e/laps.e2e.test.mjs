@@ -5,7 +5,7 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import net from 'node:net';
 import { spawn } from 'node:child_process';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -736,4 +736,33 @@ after(() => {
   const out = join(root, 'e2e/out');
   mkdirSync(out, { recursive: true });
   writeFileSync(join(out, 'results.json'), JSON.stringify(record, null, 2));
+});
+
+describe('ChatGPT domain challenge', () => {
+  let off;
+  let on;
+  before(async () => {
+    off = await startWorker();
+    on = await startWorker({ OPENAI_APPS_CHALLENGE: 'tok-laps-123' });
+  });
+  after(() => {
+    off?.stop();
+    on?.stop();
+  });
+
+  test('row 45: the challenge file is 404 when unset and exact plain text when set', async () => {
+    const missing = await fetch(`${off.url}/.well-known/openai-apps-challenge`);
+    assert.equal(missing.status, 404);
+    const served = await fetch(`${on.url}/.well-known/openai-apps-challenge`);
+    assert.equal(served.status, 200);
+    assert.match(served.headers.get('content-type') ?? '', /^text\/plain/);
+    assert.equal(await served.text(), 'tok-laps-123');
+  });
+});
+
+describe('logging stays off', () => {
+  test('row 46: wrangler.jsonc turns Workers Logs off, so the privacy statement is enforced by config', () => {
+    const config = JSON.parse(readFileSync(join(root, 'wrangler.jsonc'), 'utf8'));
+    assert.equal(config.observability?.enabled, false);
+  });
 });

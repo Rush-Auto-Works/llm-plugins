@@ -7,6 +7,7 @@ export interface Env {
   MAX_CSV_BYTES?: string;
   MAX_ROWS?: string;
   ALLOW_INSECURE_FETCH?: string;
+  OPENAI_APPS_CHALLENGE?: string;
 }
 
 const info = { name: "Rush SR Lap Analyzer MCP", version: "0.1.0", endpoint: "/mcp" };
@@ -48,6 +49,9 @@ export default {
     const path = new URL(request.url).pathname;
     if (path === "/mcp") return handleMcp(request, env, ctx);
     if (path === "/") return Response.json(info);
+    if (path === "/.well-known/openai-apps-challenge" && env.OPENAI_APPS_CHALLENGE) {
+      return new Response(env.OPENAI_APPS_CHALLENGE, { headers: { "content-type": "text/plain; charset=utf-8" } });
+    }
     return new Response("Not found", { status: 404 });
   },
 } satisfies ExportedHandler<Env>;
