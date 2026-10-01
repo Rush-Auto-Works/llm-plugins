@@ -369,6 +369,8 @@ describe('row 3: cold start with upstream down', () => {
     const msg = await callTool(w.url, 'diagnose_symptom', { symptom: 'engine will not start' });
     assert.equal(isFailure(msg), true);
     assert.match(textOf(msg), /manual\.rush\.sr/);
+    // Every tool result, errors included, ends with the attribution line, so the privacy statement and the UTM counts hold.
+    assert.match(textOf(msg), /\n\nBuilt by Rush Auto Works: https:\/\/rushautoworks\.com\/[^\s]*utm_content=diagnose_symptom$/);
     record.row3 = { text: textOf(msg) };
   });
 });
