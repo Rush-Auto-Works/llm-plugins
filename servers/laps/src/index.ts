@@ -10,7 +10,7 @@ export interface Env {
   OPENAI_APPS_CHALLENGE?: string;
 }
 
-const info = { name: "Rush SR Lap Analyzer MCP", version: "0.1.0", endpoint: "/mcp" };
+const info = { name: "Rush SR Lap Analyzer MCP", version: "0.2.0", endpoint: "/mcp" };
 const tooLarge = () => Response.json({ jsonrpc: "2.0", error: { code: -32600, message: "Request body too large" }, id: null }, { status: 413 });
 
 async function handleMcp(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
