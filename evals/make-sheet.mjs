@@ -13,16 +13,16 @@ const attach = (prompt) => prompt
   .replaceAll('\n', ' ')
   .replaceAll('|', '/');
 
-const rows = set.prompts.map((item) => `| ${item.id} | ${item.kind} | ${item.expect ?? 'none'} | ${attach(item.prompt)} |  |  |`);
+const rows = set.prompts.map((item) => `| ${item.id} | ${item.kind} | ${item.expect ?? 'none'} | ${(item.accept ?? []).join(', ') || '-'} | ${attach(item.prompt)} |  |  |`);
 console.log([
   '# Golden prompts: ChatGPT sheet',
   '',
   'Run in ChatGPT developer mode with both Rush SR plugins enabled. One new chat per row. For rows with an attachment, attach the named file from `evals/` instead of pasting it.',
   '',
-  'Write the first Rush SR tool ChatGPT called (or "none") in the "called" column, and mark "ok" when it equals the expected tool or the call was acceptable. For "none" rows any Rush SR tool call is a miss.',
+  'Write the first Rush SR tool ChatGPT called (or "none") in the "called" column, and mark "ok" when it equals the expected tool or one listed under "also ok". For "none" rows any Rush SR tool call is a miss.',
   '',
-  '| id | kind | expected | prompt | called | ok |',
-  '|---|---|---|---|---|---|',
+  '| id | kind | expected | also ok | prompt | called | ok |',
+  '|---|---|---|---|---|---|---|',
   ...rows,
   '',
   'Score: direct and indirect rows measure recall (did the right tool run?). Negative rows measure precision (did a tool stay out of the way?).',

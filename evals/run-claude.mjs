@@ -22,15 +22,31 @@ const set = JSON.parse(readFileSync(join(here, 'golden-prompts.json'), 'utf8'));
 const csvA = readFileSync(join(here, 'sample-session.csv'), 'utf8');
 const csvB = readFileSync(join(here, 'sample-session-b.csv'), 'utf8');
 
+function fail(message) {
+  console.error(`run-claude: ${message}`);
+  process.exit(2);
+}
+
+// The value after --name. A flag with no value, or followed by another flag, is an error, not a default.
 function option(name, fallback) {
   const at = process.argv.indexOf(`--${name}`);
-  return at > 0 ? process.argv[at + 1] : fallback;
+  if (at < 0) return fallback;
+  const value = process.argv[at + 1];
+  if (value === undefined || value.startsWith('--')) fail(`--${name} needs a value`);
+  return value;
+}
+
+function positiveInteger(name, fallback) {
+  const raw = option(name, String(fallback));
+  const value = Number(raw);
+  if (!Number.isInteger(value) || value < 1) fail(`--${name} must be a whole number of at least 1, got "${raw}"`);
+  return value;
 }
 
 const model = option('model', 'claude-sonnet-5-5');
-const runs = Number(option('runs', '1'));
-const concurrency = Number(option('concurrency', '4'));
-const only = option('only', '')?.split(',').filter(Boolean);
+const runs = positiveInteger('runs', 1);
+const concurrency = positiveInteger('concurrency', 4);
+const only = option('only', '').split(',').filter(Boolean);
 const web = process.argv.includes('--web');
 const bin = process.env.CLAUDE_BIN ?? 'claude';
 const stamp = new Date().toISOString().slice(0, 10);
@@ -150,7 +166,9 @@ function table(results) {
   return ['| id | kind | expected | called | result | prompt |', '|---|---|---|---|---|---|', ...rows].join('\n');
 }
 
-const chosen = set.prompts.filter((item) => !only?.length || only.includes(item.id));
+const unknown = only.filter((id) => !set.prompts.some((item) => item.id === id));
+if (unknown.length) fail(`unknown prompt id: ${unknown.join(', ')}`);
+const chosen = set.prompts.filter((item) => !only.length || only.includes(item.id));
 const queue = Array.from({ length: runs }, () => chosen).flat();
 const results = await pool(queue, concurrency, runOne);
 const report = [
@@ -164,6 +182,6 @@ const report = [
   '',
 ].join('\n');
 writeFileSync(out, report);
-writeFileSync(out.replace(/\.md$/, '.json'), `${JSON.stringify(results.map((row) => ({ id: row.item.id, kind: row.item.kind, expect: row.item.expect ?? null, called: row.called, pass: passes(row), error: row.error || null, ms: row.ms, code: row.code })), null, 2)}\n`);
+writeFileSync(`${out.endsWith('.md') ? out.slice(0, -3) : out}.json`, `${JSON.stringify(results.map((row) => ({ id: row.item.id, kind: row.item.kind, expect: row.item.expect ?? null, called: row.called, pass: passes(row), error: row.error || null, ms: row.ms, code: row.code })), null, 2)}\n`);
 console.log(report);
 if (results.some((row) => row.error)) process.exitCode = 1;
