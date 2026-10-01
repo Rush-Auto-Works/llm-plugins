@@ -144,6 +144,9 @@ describe('healthy upstream', () => {
       assert.ok(t.outputSchema, `${t.name} outputSchema`);
       assert.match(t.description, /Use this when/, `${t.name} description`);
       assert.match(t.description, /Do not use for/, `${t.name} description`);
+      // The manual covers one car. Without this the tools fire for any vehicle (found by the golden prompt set).
+      assert.match(t.description, /Rush SR only/, `${t.name} says it covers the Rush SR only`);
+      assert.match(t.description, /other vehicles/, `${t.name} says not to use it for other vehicles`);
     }
     record.row12 = tools.map((t) => ({ name: t.name, annotations: t.annotations }));
   });
