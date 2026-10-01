@@ -36,7 +36,7 @@ North Carolina Center for Automotive Research,310 Technology Drive,Garysburg,NC,
 Motorsports Park Hastings,427 S Showboat Blvd,Hastings,NE,68901,40.57861,-98.35306,Midwest,road_course,active,,2026,nasa;scca,https://racemph.com,official/wikipedia/osm via lookup agent
 Club Motorsports,780 Ossipee Mountain Highway,Tamworth,NH,03886,43.821,-71.24521,Northeast,road_course,active,,,requested,https://clubmotorsports.com,nominatim (OpenStreetMap)
 New Jersey Motorsports Park,8000 Dividing Creek Rd.,Millville,NJ,08332,39.36036,-75.06632,Northeast,road_course,active,,2026,gridlife;imsa;nasa;scca,https://njmp.com/,nominatim (OpenStreetMap)
-Las Vegas Motor Speedway Outside Road Course,8 Checkered Flag Lane,Las Vegas,NV,89115,36.26685,-115.01789,West,road_course,active,,,candidate;scca,https://www.lvms.com,official/wikipedia/osm via lookup agent
+Las Vegas Motor Speedway Outside Road Course,8 Checkered Flag Lane,Las Vegas,NV,89115,36.26685,-115.01789,West,road_course,active,active: its own site or Wikipedia showed it operating in 2026; no dated 2022+ sanctioned schedule was in the lists read,,candidate;scca,https://www.lvms.com,official/wikipedia/osm via lookup agent
 Watkins Glen International,2790 County Route 16,Watkins Glen,NY,14891,42.3369,-76.9272,Northeast,road_course,active,,2026,gridlife;imsa;nasa;scca,https://www.theglen.com,rush prod (curated)
 Mid-Ohio Sports Car Course,7721 Steam Corners Road,Lexington,OH,44904,40.6892,-82.6356,Midwest,road_course,active,,2026,gridlife;imsa;nasa;scca,https://www.midohio.com,rush prod (curated)
 Nelson Ledges Road Course,10342 Ohio 305,Garrettsville,OH,44231,41.3054,-81.01637,Midwest,road_course,active,,2026,candidate;scca,http://www.nelsonledges.com,nominatim (OpenStreetMap)
@@ -47,7 +47,7 @@ Pocono Raceway,1234 Long Pond Road,Blakeslee,PA,18610,41.0611,-75.5084,Northeast
 Carolina Motorsports Park,3662 Kershaw Highway,Kershaw,SC,29067,34.48881,-80.59508,Southeast,road_course,active,,2026,gridlife;nasa;scca,https://carolinamotorsportspark.com,nominatim (OpenStreetMap)
 Circuit of the Americas,9201 Circuit of The Americas Blvd,Austin,TX,78617,30.1328,-97.6411,South,road_course,active,,2024,gridlife;imsa;nasa;scca,https://circuitoftheamericas.com/,rush prod (curated)
 Eagles Canyon Raceway,7629 North FM-51,Decatur,TX,76234,33.2376,-97.3553,South,road_course,active,,2026,candidate;nasa;scca,https://eaglescanyon.com,rush prod (curated)
-Harris Hill Raceway,2840 Harris Hill Rd,San Marcos,TX,78666,29.91889,-97.87326,South,road_course,active,,,candidate,http://harrishillroad.com/,official/wikipedia/osm via lookup agent
+Harris Hill Raceway,2840 Harris Hill Rd,San Marcos,TX,78666,29.91889,-97.87326,South,road_course,active,active: its own site or Wikipedia showed it operating in 2026; no dated 2022+ sanctioned schedule was in the lists read,,candidate,http://harrishillroad.com/,official/wikipedia/osm via lookup agent
 MSR Cresson,9012 Performance Court,Cresson,TX,76035,32.52317,-97.61156,South,road_course,active,,2026,candidate;nasa;scca,https://www.motorsportranch.com/,nominatim (OpenStreetMap)
 MSR Houston,1 Performance Drive,Angleton,TX,77515,29.1933,-95.4205,South,road_course,active,,2026,candidate;nasa;scca,https://msrhouston.com,rush prod (curated)
 Utah Motorsports Campus,512 Sheep Lane,Grantsville,UT,84074,40.58005,-112.37906,West,road_course,active,,2026,imsa;nasa;scca,https://utahmotorsportscampus.com,nominatim (OpenStreetMap)
