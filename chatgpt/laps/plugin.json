@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rush-sr-lap-analyzer",
+  "version": "0.0.0",
+  "description": "Lap analysis for AiM RaceStudio data: lap times, best and theoretical best, compare laps, find lost time, compare two drivers.",
+  "author": {
+    "name": "RUSH Auto Works Inc",
+    "url": "https://rushautoworks.com"
+  },
+  "homepage": "https://rushautoworks.com/ai-assistants/",
+  "repository": "https://github.com/Rush-Auto-Works/llm-plugins",
+  "license": "MIT",
+  "keywords": [
+    "lap analysis",
+    "aim",
+    "racestudio",
+    "lap times",
+    "theoretical best",
+    "motorsport",
+    "rush sr"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Rush SR Lap Analyzer",
+        "shortDescription": "AiM RaceStudio lap analysis",
+        "longDescription": "Attach an AiM RaceStudio CSV export and ask about your laps.\n\nAnalyze a session: lap times, your best lap and theoretical best lap, consistency, and which laps were set aside and why. Compare two laps: the time delta, braking points and corner minimum speeds. Find where a lap loses time, sector by sector. Compare two sessions, such as two drivers or two cars on the same track, best lap against best lap.\n\nIt reads the data you give it and does arithmetic. It does not call a language model, stores nothing and needs no sign-in. Files up to 8 MB; AiM .xrk logs are not read directly, so export a CSV from RaceStudio.\n\nBuilt by RUSH Auto Works Inc.",
+        "developerName": "RUSH Auto Works Inc",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "websiteURL": "https://rushautoworks.com/ai-assistants/",
+        "privacyPolicyURL": "https://rushautoworks.com/privacy-policy/",
+        "termsOfServiceURL": "https://rushautoworks.com/terms-and-conditions/",
+        "defaultPrompt": [
+          "Analyze my laps from this RaceStudio export.",
+          "Compare lap 3 and lap 4: where did I brake and how fast was I in the corners?",
+          "Compare these two sessions: who was faster and where?"
+        ],
+        "brandColor": "#3C5AA0",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

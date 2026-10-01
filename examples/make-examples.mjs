@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // Writes two small synthetic AiM RaceStudio CSV exports for trying the tools: node examples/make-examples.mjs
 // Session A is a clean car; session B is the same track about 3% slower. Both come from the test fixtures, not from a real
-// driver. They keep the four channels the tools use at 5 Hz, so each is small enough to paste into a chat (about 40 KB).
+// driver. They keep the four channels the tools use at 5 Hz, so each is small enough to paste into a chat (about 57 KB).
 import { writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
