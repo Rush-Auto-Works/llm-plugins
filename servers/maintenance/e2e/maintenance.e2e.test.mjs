@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 import http from 'node:http';
 import net from 'node:net';
 import { spawn } from 'node:child_process';
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -483,4 +483,11 @@ after(() => {
   const out = join(root, 'e2e/out');
   mkdirSync(out, { recursive: true });
   writeFileSync(join(out, 'results.json'), JSON.stringify(record, null, 2));
+});
+
+describe('logging stays off', () => {
+  test('row 21: wrangler.jsonc turns Workers Logs off, so the privacy statement is enforced by config', () => {
+    const config = JSON.parse(readFileSync(join(root, 'wrangler.jsonc'), 'utf8'));
+    assert.equal(config.observability?.enabled, false);
+  });
 });

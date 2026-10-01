@@ -5,6 +5,7 @@
   "compatibility_flags": ["nodejs_compat"],
   "workers_dev": true,
   "preview_urls": true,
+  "observability": { "enabled": false },
   "vars": {
     "MANUAL_BASE": "https://manual.rush.sr",
     "MANUAL_PUBLIC_URL": "https://manual.rush.sr",
