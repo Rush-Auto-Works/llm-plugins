@@ -2,7 +2,7 @@
 
 ## us-road-courses.csv
 
-US road-racing venues with street address, coordinates and whether each is still running. One row per venue, 93 rows: 59 `active`, 9 `unverified`, 25 `excluded` (closed tracks, temporary street circuits, big ovals). Built 2026-10-01 by [Rush Auto Works](https://rushautoworks.com) for its dealer CRM's "Nearest tracks" widget.
+US road-racing venues with street address, coordinates and whether each is still running. One row per venue, 93 rows: 58 `active`, 10 `unverified`, 25 `excluded` (closed tracks, temporary street circuits, big ovals). Built 2026-10-01 by [Rush Auto Works](https://rushautoworks.com) for its dealer CRM's "Nearest tracks" widget.
 
 | Column | Meaning |
 |---|---|
@@ -16,4 +16,4 @@ US road-racing venues with street address, coordinates and whether each is still
 | `sources` | Which of those bodies ran an event there; `requested` means a dealer asked for it |
 | `website` | Official site, when one was found |
 
-`active` means the venue was seen at a sanctioned event in 2022 or later, was requested by name, or was already in the CRM. A venue that opened or closed after the build date is not reflected, so check the venue's site before sending anyone there. Canadian venues are not included. A few addresses came from search summaries or MotorsportReg because the venue's own page was blocked.
+`active` means the venue was seen at a sanctioned event in 2022 or later, was requested by name, was already in the CRM, or its own site showed it operating in 2026 (`status_note` says which when it is not a 2022+ event). A venue that opened or closed after the build date is not reflected, so check the venue's site before sending anyone there. Canadian venues are not included. A few addresses came from search summaries or MotorsportReg because the venue's own page was blocked.

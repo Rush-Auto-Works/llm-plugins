@@ -19,7 +19,6 @@ Sebring International Raceway,113 Midway Drive,Sebring,FL,33870,27.45349,-81.353
 Atlanta Motorsports Park,20 Duck Thurmond Road,Dawsonville,GA,30534,34.43524,-84.17666,Southeast,road_course,active,,2022,gridlife,https://www.atlantamotorsportspark.com,nominatim (OpenStreetMap)
 Michelin Raceway Road Atlanta,5300 Winder Highway,Braselton,GA,30517,34.1486,-83.816,Southeast,road_course,active,,2026,fara;gridlife;imsa;nasa;scca,https://michelinracewayroadatlanta.com,rush prod (curated)
 Roebling Road Raceway,1135 Roebling Road,Bloomingdale,GA,31302,32.16808,-81.32238,Southeast,road_course,active,,2026,requested;nasa;scca,https://www.roeblingroad.com/,nominatim (OpenStreetMap)
-Mid-America Motorplex,19340 Jesup Ave,Pacific Junction,IA,51561,41.02535,-95.81911,Midwest,road_course,active,,2012,scca,http://www.racewayparkofthemidlands.com/site/Home,official/wikipedia/osm via lookup agent
 Autobahn Country Club,3795 Centerpoint Way,Joliet,IL,60436,41.45378,-88.1257,Midwest,road_course,active,,2026,fara;gridlife;nasa;scca,https://www.autobahncc.com,nominatim (OpenStreetMap)
 Blackhawk Farms Raceway,15538 Prairie Road,South Beloit,IL,61080,42.48752,-89.11465,Midwest,road_course,active,,2026,requested;scca,https://blackhawkfarms.com,nominatim (OpenStreetMap)
 World Wide Technology Raceway,700 Raceway Boulevard,Madison,IL,62060,38.6522,-90.13589,Midwest,road_course,active,,2026,requested;scca,https://wwtraceway.com,nominatim (OpenStreetMap)
@@ -29,11 +28,11 @@ NOLA Motorsports Park,11075 Nicolle Boulevard,Avondale,LA,70094,29.88549,-90.197
 Palmer Motorsports Park,58 W Ware Rd,Palmer,MA,01069,42.23605,-72.24442,Northeast,road_course,active,,,requested;scca,https://palmermsp.com,official/wikipedia/osm via lookup agent
 GingerMan Raceway,61414 Phoenix Rd.,South Haven,MI,49090,42.4053,-86.1419,Midwest,road_course,active,,2026,requested;gridlife;scca,https://www.gingermanraceway.com/,rush prod (curated)
 Grattan Raceway,7201 Lessiter Road NE,Belding,MI,48809,43.09538,-85.3868,Midwest,road_course,active,,2026,requested;scca,https://www.grattanraceway.com,nominatim (OpenStreetMap)
-Waterford Hills Road Racing,4770 Waterford Road,Clarkston,MI,48346,42.70897,-83.39093,Midwest,road_course,active,,2020,scca,https://waterfordhills.com,official/wikipedia/osm via lookup agent
+Waterford Hills Road Racing,4770 Waterford Road,Clarkston,MI,48346,42.70897,-83.39093,Midwest,road_course,active,active: its own site showed it operating in 2026; no 2022+ sanctioned schedule was in the lists read,2020,scca,https://waterfordhills.com,official/wikipedia/osm via lookup agent
 Brainerd International Raceway,5523 Birchdale Rd,Brainerd,MN,56401,46.41609,-94.27116,Midwest,road_course,active,,2026,requested;scca,https://www.birmn.com,nominatim (OpenStreetMap)
 Hedge Hollow Raceway,9289 NE State Route T,Adrian,MO,64720,38.396,-94.17505,Midwest,road_course,active,,2026,nasa;scca,https://www.hedgehollowraceway.com,nominatim (OpenStreetMap)
 Ozarks International Raceway,29211 MO Highway 135,Gravois Mills,MO,65037,38.27588,-92.88671,Midwest,road_course,active,,2026,requested;nasa;scca,https://www.ozarksinternationalraceway.com/,nominatim (OpenStreetMap)
-North Carolina Center for Automotive Research,310 Technology Drive,Garysburg,NC,27831,36.47899,-77.57949,Southeast,road_course,active,,,scca,,official/wikipedia/osm via lookup agent
+North Carolina Center for Automotive Research,310 Technology Drive,Garysburg,NC,27831,36.47899,-77.57949,Southeast,road_course,active,active: its own site showed it operating in 2026; no dated sanctioned schedule was in the lists read,,scca,,official/wikipedia/osm via lookup agent
 Motorsports Park Hastings,427 S Showboat Blvd,Hastings,NE,68901,40.57861,-98.35306,Midwest,road_course,active,,2026,nasa;scca,https://racemph.com,official/wikipedia/osm via lookup agent
 Club Motorsports,780 Ossipee Mountain Highway,Tamworth,NH,03886,43.821,-71.24521,Northeast,road_course,active,,,requested,https://clubmotorsports.com,nominatim (OpenStreetMap)
 New Jersey Motorsports Park,8000 Dividing Creek Rd.,Millville,NJ,08332,39.36036,-75.06632,Northeast,road_course,active,,2026,gridlife;imsa;nasa;scca,https://njmp.com/,nominatim (OpenStreetMap)
@@ -71,6 +70,7 @@ Jennings GP,CR 143,Jennings,FL,32053,30.57605,-83.15702,Southeast,road_course,un
 Palm Beach International Raceway,17047 Bee Line Highway,Jupiter,FL,33478,26.91971,-80.30609,Southeast,road_course,unverified,no evidence of a 2022+ event; not seeded,,requested,,nominatim (OpenStreetMap)
 Streets of St. Petersburg,,,FL,,,,Southeast,road_course,excluded,no coordinates,2026,imsa,,
 Iowa Speedway,Iowa Speedway Drive,Newton,IA,50208,41.69123,-93.01352,Midwest,road_course,excluded,oval,2018,scca,,nominatim (OpenStreetMap)
+Mid-America Motorplex,19340 Jesup Ave,Pacific Junction,IA,51561,41.02535,-95.81911,Midwest,road_course,unverified,no 2026 events found and the venue site was unreachable; last sanctioned event seen 2012,2012,scca,http://www.racewayparkofthemidlands.com/site/Home,official/wikipedia/osm via lookup agent
 Meadowdale International Raceway,,,IL,,,,Midwest,road_course,excluded,no coordinates,1968,scca,,
 Putnam Park Road Course,East County Road 550 South,Putnam County,IN,46135,39.58417,-86.7446,Midwest,road_course,unverified,no evidence of a 2022+ event; not seeded,2020,requested;scca,,nominatim (OpenStreetMap)
 Heartland Motorsports Park,7530 Southwest Topeka Boulevard,Topeka,KS,66619,38.92732,-95.6734,Midwest,road_course,excluded,"closed: CLOSED. Closed Sept 19 2023; IHRA bought it Dec 30 2025, then cancelled all remaining events July 2026 and the property was listed f",2023,gridlife;scca,http://heartlandpark.com/,nominatim (OpenStreetMap)
