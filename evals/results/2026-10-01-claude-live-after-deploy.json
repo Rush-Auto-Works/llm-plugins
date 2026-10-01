@@ -1,0 +1,555 @@
+[
+  {
+    "id": "diag-d1",
+    "kind": "direct",
+    "expect": "diagnose_symptom",
+    "called": [
+      "diagnose_symptom"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 6754,
+    "code": 0
+  },
+  {
+    "id": "diag-d2",
+    "kind": "direct",
+    "expect": "diagnose_symptom",
+    "called": [
+      "diagnose_symptom"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 7687,
+    "code": 0
+  },
+  {
+    "id": "diag-i1",
+    "kind": "indirect",
+    "expect": "diagnose_symptom",
+    "called": [
+      "diagnose_symptom",
+      "lookup_procedure",
+      "diagnose_symptom"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 13342,
+    "code": 0
+  },
+  {
+    "id": "diag-i2",
+    "kind": "indirect",
+    "expect": "diagnose_symptom",
+    "called": [
+      "diagnose_symptom"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 11771,
+    "code": 0
+  },
+  {
+    "id": "sched-d1",
+    "kind": "direct",
+    "expect": "maintenance_schedule",
+    "called": [
+      "maintenance_schedule"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 7853,
+    "code": 0
+  },
+  {
+    "id": "sched-d2",
+    "kind": "direct",
+    "expect": "maintenance_schedule",
+    "called": [
+      "maintenance_schedule"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 6802,
+    "code": 0
+  },
+  {
+    "id": "sched-i1",
+    "kind": "indirect",
+    "expect": "maintenance_schedule",
+    "called": [
+      "maintenance_schedule",
+      "maintenance_schedule"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 11136,
+    "code": 0
+  },
+  {
+    "id": "sched-i2",
+    "kind": "indirect",
+    "expect": "maintenance_schedule",
+    "called": [
+      "maintenance_schedule"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 6641,
+    "code": 0
+  },
+  {
+    "id": "proc-d1",
+    "kind": "direct",
+    "expect": "lookup_procedure",
+    "called": [
+      "lookup_procedure"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 8648,
+    "code": 0
+  },
+  {
+    "id": "proc-d2",
+    "kind": "direct",
+    "expect": "lookup_procedure",
+    "called": [
+      "lookup_procedure",
+      "maintenance_schedule"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 7699,
+    "code": 0
+  },
+  {
+    "id": "proc-i1",
+    "kind": "indirect",
+    "expect": "lookup_procedure",
+    "called": [
+      "lookup_procedure"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 11025,
+    "code": 0
+  },
+  {
+    "id": "proc-i2",
+    "kind": "indirect",
+    "expect": "lookup_procedure",
+    "called": [
+      "lookup_procedure",
+      "maintenance_schedule"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 12911,
+    "code": 0
+  },
+  {
+    "id": "analyze-d1",
+    "kind": "direct",
+    "expect": "analyze_session",
+    "called": [
+      "analyze_session"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 6231,
+    "code": 0
+  },
+  {
+    "id": "analyze-d2",
+    "kind": "direct",
+    "expect": "analyze_session",
+    "called": [
+      "analyze_session"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 5995,
+    "code": 0
+  },
+  {
+    "id": "analyze-i1",
+    "kind": "indirect",
+    "expect": "analyze_session",
+    "called": [
+      "analyze_session"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 7904,
+    "code": 0
+  },
+  {
+    "id": "analyze-i2",
+    "kind": "indirect",
+    "expect": "analyze_session",
+    "called": [
+      "analyze_session"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 6616,
+    "code": 0
+  },
+  {
+    "id": "laps-d1",
+    "kind": "direct",
+    "expect": "compare_laps",
+    "called": [
+      "compare_laps"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 12369,
+    "code": 0
+  },
+  {
+    "id": "laps-d2",
+    "kind": "direct",
+    "expect": "compare_laps",
+    "called": [
+      "compare_laps"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 12465,
+    "code": 0
+  },
+  {
+    "id": "laps-i1",
+    "kind": "indirect",
+    "expect": "compare_laps",
+    "called": [
+      "compare_laps"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 13969,
+    "code": 0
+  },
+  {
+    "id": "laps-i2",
+    "kind": "indirect",
+    "expect": "compare_laps",
+    "called": [
+      "compare_laps"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 12634,
+    "code": 0
+  },
+  {
+    "id": "loss-d1",
+    "kind": "direct",
+    "expect": "find_time_loss",
+    "called": [
+      "find_time_loss"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 6781,
+    "code": 0
+  },
+  {
+    "id": "loss-d2",
+    "kind": "direct",
+    "expect": "find_time_loss",
+    "called": [
+      "find_time_loss"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 6607,
+    "code": 0
+  },
+  {
+    "id": "loss-i1",
+    "kind": "indirect",
+    "expect": "find_time_loss",
+    "called": [
+      "find_time_loss"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 10353,
+    "code": 0
+  },
+  {
+    "id": "loss-i2",
+    "kind": "indirect",
+    "expect": "find_time_loss",
+    "called": [
+      "find_time_loss",
+      "analyze_session"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 14083,
+    "code": 0
+  },
+  {
+    "id": "sess-d1",
+    "kind": "direct",
+    "expect": "compare_sessions",
+    "called": [
+      "compare_sessions"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 13326,
+    "code": 0
+  },
+  {
+    "id": "sess-d2",
+    "kind": "direct",
+    "expect": "compare_sessions",
+    "called": [
+      "compare_sessions"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 11193,
+    "code": 0
+  },
+  {
+    "id": "sess-i1",
+    "kind": "indirect",
+    "expect": "compare_sessions",
+    "called": [
+      "compare_sessions"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 11908,
+    "code": 0
+  },
+  {
+    "id": "sess-i2",
+    "kind": "indirect",
+    "expect": "compare_sessions",
+    "called": [
+      "compare_sessions"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 12570,
+    "code": 0
+  },
+  {
+    "id": "neg-1",
+    "kind": "negative",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 11259,
+    "code": 0
+  },
+  {
+    "id": "neg-2",
+    "kind": "negative",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 9078,
+    "code": 0
+  },
+  {
+    "id": "neg-3",
+    "kind": "negative",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 6350,
+    "code": 0
+  },
+  {
+    "id": "neg-4",
+    "kind": "negative",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 3859,
+    "code": 0
+  },
+  {
+    "id": "neg-5",
+    "kind": "negative",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 7639,
+    "code": 0
+  },
+  {
+    "id": "neg-6",
+    "kind": "negative",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 12800,
+    "code": 0
+  },
+  {
+    "id": "neg-7",
+    "kind": "negative",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 4147,
+    "code": 0
+  },
+  {
+    "id": "neg-8",
+    "kind": "negative",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 9944,
+    "code": 0
+  },
+  {
+    "id": "tricky-1",
+    "kind": "tricky",
+    "expect": "diagnose_symptom",
+    "called": [
+      "diagnose_symptom"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 6492,
+    "code": 0
+  },
+  {
+    "id": "tricky-2",
+    "kind": "tricky",
+    "expect": "lookup_procedure",
+    "called": [
+      "lookup_procedure"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 7058,
+    "code": 0
+  },
+  {
+    "id": "tricky-3",
+    "kind": "tricky",
+    "expect": "maintenance_schedule",
+    "called": [
+      "maintenance_schedule",
+      "maintenance_schedule"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 9750,
+    "code": 0
+  },
+  {
+    "id": "tricky-4",
+    "kind": "tricky",
+    "expect": "analyze_session",
+    "called": [
+      "analyze_session"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 13557,
+    "code": 0
+  },
+  {
+    "id": "tricky-5",
+    "kind": "tricky",
+    "expect": "compare_sessions",
+    "called": [
+      "compare_sessions"
+    ],
+    "pass": true,
+    "error": null,
+    "ms": 11319,
+    "code": 0
+  },
+  {
+    "id": "near-1",
+    "kind": "near-miss",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 9818,
+    "code": 0
+  },
+  {
+    "id": "near-2",
+    "kind": "near-miss",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 9469,
+    "code": 0
+  },
+  {
+    "id": "near-3",
+    "kind": "near-miss",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 8067,
+    "code": 0
+  },
+  {
+    "id": "near-4",
+    "kind": "near-miss",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 15390,
+    "code": 0
+  },
+  {
+    "id": "near-5",
+    "kind": "near-miss",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 14124,
+    "code": 0
+  },
+  {
+    "id": "near-6",
+    "kind": "near-miss",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 9146,
+    "code": 0
+  },
+  {
+    "id": "near-7",
+    "kind": "near-miss",
+    "expect": null,
+    "called": [],
+    "pass": true,
+    "error": null,
+    "ms": 2384,
+    "code": 0
+  }
+]
