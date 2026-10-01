@@ -7,5 +7,10 @@
     "name": "Rush Auto Works",
     "url": "https://rushautoworks.com"
   },
-  "privacyPolicyUrl": "https://rushautoworks.com/privacy-policy/"
+  "privacyPolicyUrl": "https://rushautoworks.com/privacy-policy/",
+  "homepage": "https://rushautoworks.com/ai-assistants/",
+  "documentationUrl": "https://rushautoworks.com/ai-assistants/",
+  "repository": "https://github.com/Rush-Auto-Works/llm-plugins",
+  "supportUrl": "https://rushautoworks.com/contact/",
+  "termsOfServiceUrl": "https://rushautoworks.com/terms-and-conditions/"
 }
