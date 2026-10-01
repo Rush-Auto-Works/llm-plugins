@@ -66,6 +66,10 @@ const sessionsOutput = z.object({
 });
 
 const annotations = { readOnlyHint: true, destructiveHint: false, openWorldHint: true } as const;
+// The Claude directory portal reads annotations.title (the older field) and newer clients read the top-level title, so one
+// string feeds both and they cannot drift.
+const titled = (title: string) => ({ title, annotations: { ...annotations, title } });
+
 const _meta = { "openai/fileParams": ["file"] };
 
 function success(name: string, result: Record<string, unknown>, summary: string) {
@@ -103,9 +107,9 @@ async function loadSide(side: "A" | "B", input: { file?: z.infer<typeof file>; c
 function registerAnalysis(server: McpServer, env: Env): void {
   const name = "analyze_session";
   server.registerTool(name, {
-    title: "Analyze an AiM session",
+    ...titled("Analyze an AiM session"),
     description: "Use this when you want to analyze my AiM data, see lap times, the best lap and consistency. Upload an AiM RaceStudio CSV export or paste its CSV text. Do not use for comparing two specific laps or finding one lap's slowest sectors.",
-    inputSchema: input, outputSchema: analysisOutput, annotations, _meta,
+    inputSchema: input, outputSchema: analysisOutput, _meta,
   }, async (args) => {
     try {
       const result = analyzeSession(await load(args, env));
@@ -117,9 +121,9 @@ function registerAnalysis(server: McpServer, env: Env): void {
 function registerComparison(server: McpServer, env: Env): void {
   const name = "compare_laps";
   server.registerTool(name, {
-    title: "Compare two laps",
+    ...titled("Compare two laps"),
     description: "Use this when asking compare my laps or why am I slow in turn 3: compare braking points, corner minimum speeds and time delta for two lap numbers. Upload an AiM RaceStudio CSV export or paste its CSV text. Do not use for a full session overview.",
-    inputSchema: { ...input, lap_a: lapNumber, lap_b: lapNumber }, outputSchema: comparisonOutput, annotations, _meta,
+    inputSchema: { ...input, lap_a: lapNumber, lap_b: lapNumber }, outputSchema: comparisonOutput, _meta,
   }, async (args) => {
     try {
       const result = compareLaps(await load(args, env), args.lap_a, args.lap_b);
@@ -131,9 +135,9 @@ function registerComparison(server: McpServer, env: Env): void {
 function registerLoss(server: McpServer, env: Env): void {
   const name = "find_time_loss";
   server.registerTool(name, {
-    title: "Find where a lap loses time",
+    ...titled("Find where a lap loses time"),
     description: "Use this when asking where am I losing time: rank the five distance sectors where one lap loses most against the best valid lap. Upload an AiM RaceStudio CSV export or paste its CSV text. Do not use for corner speeds or braking point comparison.",
-    inputSchema: { ...input, lap: lapNumber.optional() }, outputSchema: lossOutput, annotations, _meta,
+    inputSchema: { ...input, lap: lapNumber.optional() }, outputSchema: lossOutput, _meta,
   }, async (args) => {
     try {
       const result = findTimeLoss(await load(args, env), args.lap);
@@ -145,9 +149,9 @@ function registerLoss(server: McpServer, env: Env): void {
 function registerSessions(server: McpServer, env: Env): void {
   const name = "compare_sessions";
   server.registerTool(name, {
-    title: "Compare two sessions",
+    ...titled("Compare two sessions"),
     description: "Use this when comparing two drivers, two cars or two sessions on the same track: each session's best valid lap, the time delta, the sectors where one gains or loses time, braking points, corner minimum speeds and top speed. Upload two AiM RaceStudio CSV exports or paste both as CSV text. Do not use for comparing two laps from one session or for a single-session overview.",
-    inputSchema: sessionInput, outputSchema: sessionsOutput, annotations,
+    inputSchema: sessionInput, outputSchema: sessionsOutput,
     _meta: { "openai/fileParams": ["file_a", "file_b"] },
   }, async (args) => {
     try {

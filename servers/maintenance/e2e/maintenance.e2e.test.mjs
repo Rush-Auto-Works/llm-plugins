@@ -141,6 +141,8 @@ describe('healthy upstream', () => {
       assert.equal(t.annotations?.destructiveHint, false, `${t.name} destructiveHint`);
       assert.equal(t.annotations?.openWorldHint, false, `${t.name} openWorldHint`);
       assert.ok(typeof t.title === 'string' && t.title.length > 0 && t.title.length <= 64, `${t.name} title`);
+      // The Claude directory portal reads annotations.title (the older field), not only the top-level title.
+      assert.equal(t.annotations?.title, t.title, `${t.name} annotations.title equals title`);
       assert.ok(t.outputSchema, `${t.name} outputSchema`);
       assert.match(t.description, /Use this when/, `${t.name} description`);
       assert.match(t.description, /Do not use for/, `${t.name} description`);

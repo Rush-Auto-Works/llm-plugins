@@ -54,6 +54,10 @@ function intervalOf(route: string): string | undefined {
 
 type Row = { title: string; heading: string; url: string; excerpt: string; interval?: string };
 
+// The Claude directory portal reads annotations.title (the older field) and newer clients read the top-level title, so one
+// string feeds both and they cannot drift.
+const titled = (title: string) => ({ title, annotations: { ...annotations, title } });
+
 function markdownResults(hits: SearchHit[], env: Env, toolName: string): Row[] {
   return hits.map(({ chunk }) => {
     const interval = intervalOf(chunk.route);
@@ -159,14 +163,13 @@ async function runSearch(
 
 function registerDiagnose(server: McpServer, env: Env): void {
   server.registerTool("diagnose_symptom", {
-    title: "Diagnose a Rush SR symptom",
+    ...titled("Diagnose a Rush SR symptom"),
     description: "Use this when you need to understand why your Rush SR has a symptom, such as why won't my Rush SR start. Do not use for a service interval or a step-by-step repair procedure. Covers the Rush SR only: do not use for other vehicles or for buying advice.",
     inputSchema: {
       symptom: z.string().min(1).max(500),
       context: z.string().max(500).optional(),
     },
     outputSchema,
-    annotations,
   }, ({ symptom, context }) => runSearch(
     env,
     "diagnose_symptom",
@@ -177,21 +180,19 @@ function registerDiagnose(server: McpServer, env: Env): void {
 
 function registerSchedule(server: McpServer, env: Env): void {
   server.registerTool("maintenance_schedule", {
-    title: "Rush SR maintenance schedule",
+    ...titled("Rush SR maintenance schedule"),
     description: "Use this when checking a Rush SR service interval or maintenance schedule for a component, such as how often to change brake fluid or when the chain needs service. Each result says which service interval it belongs to (every session, weekend, month, year, or 150+ hours), so pick the one that matches the car's hours or sessions. Do not use for troubleshooting a symptom or a repair procedure. Covers the Rush SR only: do not use for other vehicles or for buying advice.",
     inputSchema: { component: z.string().min(1).max(200) },
     outputSchema,
-    annotations,
   }, ({ component }) => runSearch(env, "maintenance_schedule", component, ["maintenance"], undefined, "Maintenance schedule lookup.\n\n"));
 }
 
 function registerProcedure(server: McpServer, env: Env): void {
   server.registerTool("lookup_procedure", {
-    title: "Look up a Rush SR procedure",
+    ...titled("Look up a Rush SR procedure"),
     description: "Use this when you need steps for a task, such as how do I bleed the brakes on my Rush SR. Do not use for a symptom diagnosis or a service interval lookup. Covers the Rush SR only: do not use for other vehicles or for buying advice.",
     inputSchema: { task: z.string().min(1).max(200) },
     outputSchema,
-    annotations,
   }, ({ task }) => runSearch(
     env,
     "lookup_procedure",
