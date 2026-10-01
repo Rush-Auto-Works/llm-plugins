@@ -14,7 +14,9 @@ const SERVERS = { laps: 'laps', maintenance: 'maintenance' };
 for (const server of Object.values(SERVERS)) {
   test(`${server}: package.json, lockfile, reported version and registry file agree`, () => {
     const { version } = json(`servers/${server}/package.json`);
-    assert.equal(json(`servers/${server}/package-lock.json`).version, version, 'package-lock.json');
+    const lock = json(`servers/${server}/package-lock.json`);
+    assert.equal(lock.version, version, 'package-lock.json top-level version');
+    assert.equal(lock.packages[''].version, version, 'package-lock.json root package version');
     assert.equal(json(`registry/${server}.server.json`).version, version, 'registry file');
     for (const file of ['tools.ts', 'index.ts']) {
       const reported = [...read(`servers/${server}/src/${file}`).matchAll(/version: "(\d+\.\d+\.\d+)"/g)].map((match) => match[1]);
