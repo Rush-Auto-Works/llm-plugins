@@ -25,6 +25,13 @@ Excluded laps: the first lap (out-lap), the last segment (in-lap, because it end
 
 AiM `.xrk` logs are binary and are not read directly. In Claude, install the [Rush SR plugin](../../plugin), which converts an `.xrk` with libxrk and runs the same engine in the sandbox.
 
+## Try it
+
+Two synthetic sessions, not from a real driver, are in [`examples/`](../../examples):
+
+- `synthetic-session-a.csv`: best lap 4 in 45.793 s, theoretical best 45.547 s, 4 valid laps.
+- `synthetic-session-b.csv`: the same track about 3% slower. `compare_sessions` on the pair gives a delta of -1.416 s.
+
 ## What it does with your data
 
 It analyzes the data in memory and stores nothing. It makes no calls to a language model and needs no sign-in. A file link is downloaded once, over HTTPS, with limits on size, redirects and time. Requests pass through Amazon CloudFront and Cloudflare as infrastructure providers. Workers Logs are switched off in `wrangler.jsonc`, and a test fails if that changes.

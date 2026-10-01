@@ -1,0 +1,46 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "rush-sr-maintenance",
+  "version": "0.0.0",
+  "description": "Rush SR maintenance answers from the owner's manual: diagnose a symptom, find a service interval, get the steps for a procedure.",
+  "author": {
+    "name": "RUSH Auto Works Inc",
+    "url": "https://rushautoworks.com"
+  },
+  "homepage": "https://rushautoworks.com/ai-assistants/",
+  "repository": "https://github.com/Rush-Auto-Works/llm-plugins",
+  "license": "MIT",
+  "keywords": [
+    "rush sr",
+    "maintenance",
+    "owner's manual",
+    "diagnose",
+    "service interval",
+    "motorsport"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Rush SR Maintenance",
+        "shortDescription": "Rush SR manual answers",
+        "longDescription": "Ask about your Rush SR and get answers from the public Rush SR owner's manual, each with a link to the exact section.\n\nDiagnose a symptom, such as a car that will not start or paddles that do nothing. Look up the service interval for a component and which interval it belongs to (every session, weekend, month, year or 150+ hours). Get the steps for a procedure, such as bleeding the brakes or changing the differential oil.\n\nIt searches the manual and returns the matching excerpts. It does not call a language model, stores nothing and needs no sign-in. It covers the Rush SR only.\n\nBuilt by RUSH Auto Works Inc.",
+        "developerName": "RUSH Auto Works Inc",
+        "category": "Productivity",
+        "capabilities": [
+          "Read"
+        ],
+        "websiteURL": "https://rushautoworks.com/ai-assistants/",
+        "privacyPolicyURL": "https://rushautoworks.com/privacy-policy/",
+        "termsOfServiceURL": "https://rushautoworks.com/terms-and-conditions/",
+        "defaultPrompt": [
+          "Why won't my Rush SR start? The dash shows N.",
+          "How often should I change the brake fluid on my Rush SR?",
+          "How do I bleed the brakes on my Rush SR?"
+        ],
+        "brandColor": "#3C5AA0",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

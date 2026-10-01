@@ -1,0 +1,39 @@
+{
+  "_about": "Copy for the Claude directory submissions (claude.ai/directory/manage). Limits from https://claude.com/docs/connectors/building/submission: name 100, one-liner 200, description 2000.",
+  "common": {
+    "company": "RUSH Auto Works Inc",
+    "website": "https://rushautoworks.com",
+    "privacyPolicyUrl": "https://rushautoworks.com/privacy-policy/",
+    "termsUrl": "https://rushautoworks.com/terms-and-conditions/",
+    "supportContact": "info@rushautoworks.com",
+    "authentication": "none",
+    "apiOwnership": "first-party: both servers answer from Rush's own manual or from the data the user supplies; no third-party API is called",
+    "personalHealthData": false,
+    "sponsoredContent": false,
+    "categoriesNote": "Pick one to five from the portal's list. Closest fits: Automotive, Sports, Data analysis."
+  },
+  "laps": {
+    "name": "Rush SR Lap Analyzer",
+    "oneLiner": "Analyze AiM RaceStudio lap data: lap times, best and theoretical best, compare laps, find lost time, and compare two drivers or sessions.",
+    "description": "Analyze lap data from an AiM RaceStudio CSV export. Ask for your lap times, your best lap and your theoretical best, how consistent you were, where a lap loses time, how two laps compare, or who was faster between two drivers or sessions.\n\nTools\n- analyze_session: lap times, best lap, theoretical best, consistency, and which laps were excluded and why.\n- compare_laps: time delta, braking points and corner minimum speeds for two laps in one session.\n- find_time_loss: the sectors where a lap loses the most time against your best lap.\n- compare_sessions: two sessions side by side on their best laps, with the sectors each driver gains or loses, braking points, corner minimum speeds and top speed.\n\nHow to use it: paste the CSV text from RaceStudio into the chat, or attach the file where the client supports uploads. Files up to 8 MB. For AiM .xrk logs and full-length sessions, install the Rush SR plugin, which converts and analyzes them inside Claude's sandbox.\n\nPrivacy: the server analyzes your data in memory, stores nothing, makes no calls to a language model and needs no sign-in. Requests pass through Amazon CloudFront and Cloudflare as infrastructure providers.\n\nBuilt by RUSH Auto Works Inc. Every result ends with a link to rushautoworks.com.",
+    "slug": "rush-sr-lap-analyzer",
+    "serverUrl": "https://laps.mcp.rush.sr/mcp",
+    "documentationUrl": "https://rushautoworks.com/ai-assistants/",
+    "useCases": "Review a track session: lap times, best and theoretical best lap, consistency. Find where a lap loses time. Compare two laps or two drivers on the same track. Reads and analyzes only; it never writes data.",
+    "prerequisites": "None. No account or sign-in. The user needs an AiM RaceStudio CSV export.",
+    "dataAccess": "read",
+    "testInstructions": "No account or sign-in is needed.\n\n1. Add a custom connector with the URL https://laps.mcp.rush.sr/mcp.\n2. Sample data is synthetic, not a real driver. Paste the contents of https://raw.githubusercontent.com/Rush-Auto-Works/llm-plugins/main/examples/synthetic-session-a.csv (57 KB). For the comparison also use https://raw.githubusercontent.com/Rush-Auto-Works/llm-plugins/main/examples/synthetic-session-b.csv.\n3. analyze_session: ask \"Analyze my AiM session: lap times, best lap and consistency.\" with the CSV. Expect: best lap 4 in 45.793 s, theoretical best 45.547 s, 4 valid laps, lap 1 excluded as the out-lap and lap 6 as the in-lap.\n4. compare_laps: ask \"Compare lap 2 and lap 3: braking points and corner minimum speeds.\" with the CSV. Expect: delta A minus B of -1.282 s, brake zones and corner minimum speeds.\n5. find_time_loss: ask \"Where am I losing time on lap 3 compared with my best lap?\" Expect: the largest loss at 995-1095 m, 1.002 s.\n6. compare_sessions: ask \"Compare these two sessions: who was faster and where?\" with both CSVs. Expect: delta A minus B of -1.416 s, top speed A 180.0 km/h and B 174.6 km/h.\n7. Errors: an empty CSV returns \"The CSV is empty\"; compare_sessions with only session A returns \"Session B: Provide exactly one of file_b or csv_text_b\".\n8. Each answer ends with one line, \"Built by Rush Auto Works\", with a link to rushautoworks.com. That line is the only attribution link."
+  },
+  "maintenance": {
+    "name": "Rush SR Maintenance",
+    "oneLiner": "Answers about your Rush SR from the owner's manual: diagnose a symptom, find a service interval, or get the steps for a procedure, with links.",
+    "description": "Ask about your Rush SR and get answers from the public Rush SR owner's manual (manual.rush.sr), each with a link to the exact section.\n\nTools\n- diagnose_symptom: why your Rush SR has a symptom, for example \"it won't start and the dash shows N\".\n- maintenance_schedule: the service interval for a component, and which interval it belongs to (every session, weekend, month, year or 150+ hours).\n- lookup_procedure: the steps for a task, for example how to bleed the brakes.\n\nIt covers the Rush SR only. It searches the manual and returns the matching excerpts; it does not call a language model, so your assistant does the reasoning and the manual is the source.\n\nPrivacy: the server receives your question, searches the public manual, stores nothing and needs no sign-in. Requests pass through Amazon CloudFront and Cloudflare as infrastructure providers.\n\nBuilt by RUSH Auto Works Inc. Every result ends with a link to rushautoworks.com.",
+    "slug": "rush-sr-maintenance",
+    "serverUrl": "https://maintenance.mcp.rush.sr/mcp",
+    "documentationUrl": "https://rushautoworks.com/ai-assistants/",
+    "useCases": "Diagnose a Rush SR symptom, look up a service interval, find the steps of a maintenance procedure. Reads the public manual only; it never writes data.",
+    "prerequisites": "None. No account or sign-in.",
+    "dataAccess": "read",
+    "testInstructions": "No account or sign-in is needed.\n\n1. Add a custom connector with the URL https://maintenance.mcp.rush.sr/mcp.\n2. diagnose_symptom: ask \"My Rush SR won't start. The dash shows N but the engine won't crank. What could be wrong?\" Expect: the manual section \"Car Won't Start - Dash Shows N but Engine Won't Crank\" with a manual.rush.sr link.\n3. maintenance_schedule: ask \"How often should I change the brake fluid on my Rush SR?\" Expect: the \"Brake Fluid\" section and the monthly \"Inspecting and Bleeding Brakes\" section, each with a link.\n4. lookup_procedure: ask \"How do I bleed the brakes on my Rush SR?\" Expect: the \"Inspecting and Bleeding Brakes\" sections with steps and links.\n5. Scope: ask \"How do I change the oil on a Honda Civic?\" Expect: the assistant does not use these tools, because they cover the Rush SR only.\n6. Each answer ends with one line, \"Built by Rush Auto Works\", with a link to rushautoworks.com. That line is the only attribution link."
+  }
+}
