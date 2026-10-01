@@ -1,0 +1,299 @@
+{
+  "about": "Golden prompts for the Rush SR connectors. kind: direct (names the car and the job), indirect (natural wording, no tool or plugin named), tricky (typos, another language, shorthand, still expects a tool), negative (no tool should run), near-miss (close to a tool's topic but outside it, no tool should run). expect: the tool that should be the first one called; accept: other tools that are an acceptable first call. Placeholders {{CSV_A}} and {{CSV_B}} are replaced with evals/sample-session.csv and evals/sample-session-b.csv by the Claude runner; for ChatGPT, attach the files instead.",
+  "tools": [
+    "diagnose_symptom",
+    "maintenance_schedule",
+    "lookup_procedure",
+    "analyze_session",
+    "compare_laps",
+    "find_time_loss",
+    "compare_sessions"
+  ],
+  "prompts": [
+    {
+      "id": "diag-d1",
+      "kind": "direct",
+      "expect": "diagnose_symptom",
+      "prompt": "My Rush SR won't start. The dash shows N but the engine won't crank. What could be wrong?"
+    },
+    {
+      "id": "diag-d2",
+      "kind": "direct",
+      "expect": "diagnose_symptom",
+      "prompt": "Rush SR owner here: neither shift paddle does anything and the compressor isn't running. What should I check first?"
+    },
+    {
+      "id": "diag-i1",
+      "kind": "indirect",
+      "expect": "diagnose_symptom",
+      "accept": [
+        "lookup_procedure"
+      ],
+      "prompt": "I race a Rush SR and it cranks but won't fire after sitting for a week. Track day is tomorrow, help."
+    },
+    {
+      "id": "diag-i2",
+      "kind": "indirect",
+      "expect": "diagnose_symptom",
+      "prompt": "There's a clunk in my Rush SR every time I lift off the throttle. Is that normal?"
+    },
+    {
+      "id": "sched-d1",
+      "kind": "direct",
+      "expect": "maintenance_schedule",
+      "prompt": "How often should I change the brake fluid on my Rush SR?"
+    },
+    {
+      "id": "sched-d2",
+      "kind": "direct",
+      "expect": "maintenance_schedule",
+      "prompt": "What is the service interval for the chain on a Rush SR?"
+    },
+    {
+      "id": "sched-i1",
+      "kind": "indirect",
+      "expect": "maintenance_schedule",
+      "prompt": "I'm racing my Rush SR this weekend. What needs servicing before an event?"
+    },
+    {
+      "id": "sched-i2",
+      "kind": "indirect",
+      "expect": "maintenance_schedule",
+      "prompt": "My Rush SR has 150 hours on it. What is due now?"
+    },
+    {
+      "id": "proc-d1",
+      "kind": "direct",
+      "expect": "lookup_procedure",
+      "prompt": "How do I bleed the brakes on my Rush SR?"
+    },
+    {
+      "id": "proc-d2",
+      "kind": "direct",
+      "expect": "lookup_procedure",
+      "prompt": "Walk me through changing the differential oil on a Rush SR."
+    },
+    {
+      "id": "proc-i1",
+      "kind": "indirect",
+      "expect": "lookup_procedure",
+      "prompt": "I need to swap the front brake pads on my SR. Steps please."
+    },
+    {
+      "id": "proc-i2",
+      "kind": "indirect",
+      "expect": "lookup_procedure",
+      "accept": [
+        "maintenance_schedule"
+      ],
+      "prompt": "What's the right way to change the oil on a Rush SR?"
+    },
+    {
+      "id": "analyze-d1",
+      "kind": "direct",
+      "expect": "analyze_session",
+      "prompt": "Analyze my AiM session: lap times, best lap and consistency.\n\n{{CSV_A}}"
+    },
+    {
+      "id": "analyze-d2",
+      "kind": "direct",
+      "expect": "analyze_session",
+      "prompt": "What were my best lap and my theoretical best lap in this RaceStudio export?\n\n{{CSV_A}}"
+    },
+    {
+      "id": "analyze-i1",
+      "kind": "indirect",
+      "expect": "analyze_session",
+      "prompt": "Here's my data from today's session. How did I do?\n\n{{CSV_A}}"
+    },
+    {
+      "id": "analyze-i2",
+      "kind": "indirect",
+      "expect": "analyze_session",
+      "prompt": "Was I consistent out there? This is the lap data.\n\n{{CSV_A}}"
+    },
+    {
+      "id": "laps-d1",
+      "kind": "direct",
+      "expect": "compare_laps",
+      "prompt": "Compare lap 2 and lap 3 in this AiM export: braking points and corner minimum speeds.\n\n{{CSV_A}}"
+    },
+    {
+      "id": "laps-d2",
+      "kind": "direct",
+      "expect": "compare_laps",
+      "prompt": "Why am I slow in the corners on lap 3 compared with lap 2?\n\n{{CSV_A}}"
+    },
+    {
+      "id": "laps-i1",
+      "kind": "indirect",
+      "expect": "compare_laps",
+      "prompt": "Lap 2 felt much better than lap 3. What changed? Data below.\n\n{{CSV_A}}"
+    },
+    {
+      "id": "laps-i2",
+      "kind": "indirect",
+      "expect": "compare_laps",
+      "prompt": "Did I brake earlier on lap 3 than on lap 2?\n\n{{CSV_A}}"
+    },
+    {
+      "id": "loss-d1",
+      "kind": "direct",
+      "expect": "find_time_loss",
+      "prompt": "Where am I losing time on lap 3 compared with my best lap?\n\n{{CSV_A}}"
+    },
+    {
+      "id": "loss-d2",
+      "kind": "direct",
+      "expect": "find_time_loss",
+      "prompt": "Rank the sectors where lap 2 loses the most time against my best lap.\n\n{{CSV_A}}"
+    },
+    {
+      "id": "loss-i1",
+      "kind": "indirect",
+      "expect": "find_time_loss",
+      "prompt": "Which part of the track is my weakest compared with my fastest lap?\n\n{{CSV_A}}"
+    },
+    {
+      "id": "loss-i2",
+      "kind": "indirect",
+      "expect": "find_time_loss",
+      "accept": [
+        "compare_laps"
+      ],
+      "prompt": "I want to be quicker. Where is the time hiding in this session?\n\n{{CSV_A}}"
+    },
+    {
+      "id": "sess-d1",
+      "kind": "direct",
+      "expect": "compare_sessions",
+      "prompt": "Compare these two AiM sessions: who was faster and where?\n\nSession A:\n{{CSV_A}}\n\nSession B:\n{{CSV_B}}"
+    },
+    {
+      "id": "sess-d2",
+      "kind": "direct",
+      "expect": "compare_sessions",
+      "prompt": "Compare two drivers on the same track from their RaceStudio exports. Best lap against best lap.\n\nDriver A:\n{{CSV_A}}\n\nDriver B:\n{{CSV_B}}"
+    },
+    {
+      "id": "sess-i1",
+      "kind": "indirect",
+      "expect": "compare_sessions",
+      "prompt": "My teammate and I ran the same track. Here are both exports. Where does he gain on me?\n\nMine:\n{{CSV_A}}\n\nHis:\n{{CSV_B}}"
+    },
+    {
+      "id": "sess-i2",
+      "kind": "indirect",
+      "expect": "compare_sessions",
+      "prompt": "I ran this today and again last month. Am I faster now, and in which corners?\n\nToday:\n{{CSV_A}}\n\nLast month:\n{{CSV_B}}"
+    },
+    {
+      "id": "neg-1",
+      "kind": "negative",
+      "prompt": "What's the best line through turn 1 at Road Atlanta?"
+    },
+    {
+      "id": "neg-2",
+      "kind": "negative",
+      "prompt": "How do I change a tire on a Honda Civic?"
+    },
+    {
+      "id": "neg-3",
+      "kind": "negative",
+      "prompt": "What brake fluid should I use in a Miata?"
+    },
+    {
+      "id": "neg-4",
+      "kind": "negative",
+      "prompt": "Write a haiku about racing."
+    },
+    {
+      "id": "neg-5",
+      "kind": "negative",
+      "prompt": "Explain what a theoretical best lap is."
+    },
+    {
+      "id": "neg-6",
+      "kind": "negative",
+      "prompt": "How do I analyze lap data in Excel?"
+    },
+    {
+      "id": "neg-7",
+      "kind": "negative",
+      "prompt": "How much does a Rush SR cost, and can I order one?"
+    },
+    {
+      "id": "neg-8",
+      "kind": "negative",
+      "prompt": "Recommend a good racing helmet for track days."
+    },
+    {
+      "id": "tricky-1",
+      "kind": "tricky",
+      "expect": "diagnose_symptom",
+      "prompt": "Mi Rush SR no arranca y el tablero marca N. ¿Qué reviso?"
+    },
+    {
+      "id": "tricky-2",
+      "kind": "tricky",
+      "expect": "lookup_procedure",
+      "prompt": "hw do i blleed the breaks on my rush sr?? asap"
+    },
+    {
+      "id": "tricky-3",
+      "kind": "tricky",
+      "expect": "maintenance_schedule",
+      "accept": [
+        "lookup_procedure"
+      ],
+      "prompt": "SR: when do i do the brake fluid"
+    },
+    {
+      "id": "tricky-4",
+      "kind": "tricky",
+      "expect": "analyze_session",
+      "prompt": "ok so this is the log from my SR at CMP, any thoughts?\n\n{{CSV_A}}"
+    },
+    {
+      "id": "tricky-5",
+      "kind": "tricky",
+      "expect": "compare_sessions",
+      "prompt": "Me vs my friend, same track, who's quicker and where?\n\nMe:\n{{CSV_A}}\n\nFriend:\n{{CSV_B}}"
+    },
+    {
+      "id": "near-1",
+      "kind": "near-miss",
+      "prompt": "My Miata won't start and the dash lights are dim. What should I check?"
+    },
+    {
+      "id": "near-2",
+      "kind": "near-miss",
+      "prompt": "How do I bleed the brakes on a Honda S2000?"
+    },
+    {
+      "id": "near-3",
+      "kind": "near-miss",
+      "prompt": "How often should I change the oil on a Polaris RZR?"
+    },
+    {
+      "id": "near-4",
+      "kind": "near-miss",
+      "prompt": "How do I wire a MyChron 5 to my car's CAN bus?"
+    },
+    {
+      "id": "near-5",
+      "kind": "near-miss",
+      "prompt": "What's the fastest way through the carousel at Road America?"
+    },
+    {
+      "id": "near-6",
+      "kind": "near-miss",
+      "prompt": "I'm picking brake pads for track use. Which compound is best?"
+    },
+    {
+      "id": "near-7",
+      "kind": "near-miss",
+      "prompt": "Convert a lap time of 1:39.304 to seconds."
+    }
+  ]
+}
