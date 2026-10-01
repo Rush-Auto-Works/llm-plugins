@@ -1,0 +1,22 @@
+{
+  "name": "rush-sr-maintenance-mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test e2e/*.test.mjs",
+    "deploy:preview": "wrangler versions upload --preview-alias preview"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/server": "^2.0.0",
+    "agents": "^0.24.0",
+    "zod": "^4.6.5"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20260924.1",
+    "typescript": "^7.0.2",
+    "wrangler": "^4.137.0"
+  }
+}

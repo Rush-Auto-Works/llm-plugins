@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "rush-sr-maintenance": {
+      "type": "http",
+      "url": "https://maintenance.mcp.rush.sr/mcp"
+    },
+    "rush-sr-laps": {
+      "type": "http",
+      "url": "https://laps.mcp.rush.sr/mcp"
+    }
+  }
+}

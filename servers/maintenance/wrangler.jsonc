@@ -1,0 +1,13 @@
+{
+  "name": "rush-sr-maintenance-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
+  "vars": {
+    "MANUAL_BASE": "https://manual.rush.sr",
+    "MANUAL_PUBLIC_URL": "https://manual.rush.sr",
+    "INDEX_TTL_MS": "3600000"
+  }
+}

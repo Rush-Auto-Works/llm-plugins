@@ -1,0 +1,12 @@
+{
+  "name": "rush-lap-analyzer-mcp",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-27",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": true,
+  "vars": {
+    "MAX_CSV_BYTES": "8000000",
+    "MAX_ROWS": "300000"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "rush-sr",
+  "displayName": "Rush SR",
+  "version": "0.2.0",
+  "description": "Maintenance answers from the Rush SR owner's manual and lap analysis for AiM RaceStudio and .xrk data, from Rush Auto Works.",
+  "author": { "name": "Rush Auto Works", "url": "https://rushautoworks.com" }
+}
