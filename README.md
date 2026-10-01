@@ -9,6 +9,7 @@ They work in Claude and in ChatGPT: ask a question about your Rush SR, or give i
 | Rush SR maintenance server | Diagnoses a symptom, looks up a service interval, finds the steps for a procedure, all from the public [owner's manual](https://manual.rush.sr), with deep links | `servers/maintenance`, `https://maintenance.mcp.rush.sr/mcp` |
 | Rush SR lap server | AiM RaceStudio CSV analysis: lap times, best and theoretical best lap, compare two laps, where a lap loses time, compare two sessions or two drivers | `servers/laps`, `https://laps.mcp.rush.sr/mcp` |
 | Rush SR plugin for Claude | Both servers plus a skill that reads AiM `.xrk` logs and full-size CSVs in Claude's sandbox | `plugin/` |
+| US road courses | 93 road-racing venues with street address, coordinates and whether each is still running; the same list the dealer CRM uses for "Nearest tracks" | `data/us-road-courses.csv` |
 
 ## Use it
 

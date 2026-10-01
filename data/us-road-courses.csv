@@ -1,0 +1,94 @@
+name,street,city,state,zip,lat,lng,region,type,status,status_note,last_seen_event_year,sources,website,coord_source
+Barber Motorsports Park,6040 Barber Motorsports Pkwy,Leeds,AL,35094,33.5325,-86.61889,Southeast,road_course,active,,2026,gridlife;imsa;nasa;scca,,rush prod (curated)
+Firebird Motorsports Park,20000 S. Maricopa Rd,Chandler,AZ,85226,33.26889,-111.96611,West,road_course,active,,2026,nasa,https://wildhorsepass.com/things-to-do/firebird-motorsports-park/,official/wikipedia/osm via lookup agent
+Inde Motorsports Ranch,9301 W Airport Rd,Willcox,AZ,85643,32.22762,-110.00884,West,road_course,active,,2026,requested;nasa,https://indemotorsports.com,nominatim (OpenStreetMap)
+The Podium Club,6870 S. Bianco Road,Casa Grande,AZ,85193,32.81764,-111.83476,West,road_course,active,,2026,nasa;scca,https://www.podiumclub.com,nominatim (OpenStreetMap)
+Buttonwillow Raceway Park,24551 Lerdo Highway,Buttonwillow,CA,93206,35.4894,-119.5446,West,road_course,active,,2026,requested;nasa;scca,https://www.buttonwillowraceway.com/,rush prod (curated)
+Chuckwalla Valley Raceway,25300 Rice Road,Desert Center,CA,92239,33.75034,-115.32448,West,road_course,active,,2026,requested;nasa,https://www.chuckwalla.com,nominatim (OpenStreetMap)
+Sonoma Raceway,29355 Arnold Dr,Sonoma,CA,95476,38.16083,-122.455,West,road_course,active,,2026,imsa;nasa;scca,https://www.sonomaraceway.com,rush prod (curated)
+Thunderhill Raceway Park,5250 State Highway 162,Willows,CA,95988,39.54033,-122.33069,West,road_course,active,,2026,gridlife;nasa;scca,https://www.thunderhill.com,rush prod (curated)
+WeatherTech Raceway Laguna Seca,1021 Monterey Salinas Highway,Salinas,CA,93908,36.5847,-121.7531,West,road_course,active,,2026,gridlife;imsa;nasa;scca,https://weathertechraceway.com/,rush prod (curated)
+Willow Springs International Raceway,3500 75th Street West,Rosamond,CA,93560,34.87256,-118.26135,West,road_course,active,,2026,gridlife;nasa;scca,https://www.willowspringsraceway.com,nominatim (OpenStreetMap)
+High Plains Raceway,93301 East Highway 36,Deer Trail,CO,80105,39.74805,-103.90246,West,road_course,active,,2026,requested;nasa;scca,https://www.highplainsraceway.com/,nominatim (OpenStreetMap)
+Pueblo Motorsports Park,3733 N Pueblo Boulevard,Pueblo,CO,81008,38.30177,-104.6768,West,road_course,active,,2026,nasa;scca,,nominatim (OpenStreetMap)
+Lime Rock Park,497 Lime Rock Road,Lakeville,CT,06039,41.92841,-73.38262,Northeast,road_course,active,,2026,gridlife;imsa;nasa;scca,https://www.limerock.com,nominatim (OpenStreetMap)
+Thompson Speedway Motorsports Park,205 E Thompson Rd,Thompson,CT,06277,41.98212,-71.82552,Northeast,road_course,active,,2026,requested;scca,https://www.thompsonspeedway.com/,nominatim (OpenStreetMap)
+Daytona International Speedway,1801 W International Speedway Blvd,Daytona Beach,FL,32114,29.18401,-81.07032,Southeast,road_course,active,,2026,imsa;nasa;scca,https://www.daytonainternationalspeedway.com,nominatim (OpenStreetMap)
+Homestead-Miami Speedway,1 Speedway Boulevard,Homestead,FL,33035,25.45175,-80.40943,Southeast,road_course,active,,2026,fara;imsa;nasa;scca,https://www.homesteadmiamispeedway.com,nominatim (OpenStreetMap)
+Sebring International Raceway,113 Midway Drive,Sebring,FL,33870,27.45349,-81.3531,Southeast,road_course,active,,2026,fara;imsa;nasa;scca,https://www.sebringraceway.com,nominatim (OpenStreetMap)
+Atlanta Motorsports Park,20 Duck Thurmond Road,Dawsonville,GA,30534,34.43524,-84.17666,Southeast,road_course,active,,2022,gridlife,https://www.atlantamotorsportspark.com,nominatim (OpenStreetMap)
+Michelin Raceway Road Atlanta,5300 Winder Highway,Braselton,GA,30517,34.1486,-83.816,Southeast,road_course,active,,2026,fara;gridlife;imsa;nasa;scca,https://michelinracewayroadatlanta.com,rush prod (curated)
+Roebling Road Raceway,1135 Roebling Road,Bloomingdale,GA,31302,32.16808,-81.32238,Southeast,road_course,active,,2026,requested;nasa;scca,https://www.roeblingroad.com/,nominatim (OpenStreetMap)
+Mid-America Motorplex,19340 Jesup Ave,Pacific Junction,IA,51561,41.02535,-95.81911,Midwest,road_course,active,,2012,scca,http://www.racewayparkofthemidlands.com/site/Home,official/wikipedia/osm via lookup agent
+Autobahn Country Club,3795 Centerpoint Way,Joliet,IL,60436,41.45378,-88.1257,Midwest,road_course,active,,2026,fara;gridlife;nasa;scca,https://www.autobahncc.com,nominatim (OpenStreetMap)
+Blackhawk Farms Raceway,15538 Prairie Road,South Beloit,IL,61080,42.48752,-89.11465,Midwest,road_course,active,,2026,requested;scca,https://blackhawkfarms.com,nominatim (OpenStreetMap)
+World Wide Technology Raceway,700 Raceway Boulevard,Madison,IL,62060,38.6522,-90.13589,Midwest,road_course,active,,2026,requested;scca,https://wwtraceway.com,nominatim (OpenStreetMap)
+Indianapolis Motor Speedway,4790 West 16th Street,Indianapolis,IN,46222,39.79625,-86.23482,Midwest,road_course,active,,2026,imsa;scca,https://www.indianapolismotorspeedway.com/,nominatim (OpenStreetMap)
+NCM Motorsports Park,505 Kimberlee A. Fast Drive,Bowling Green,KY,42103,37.00197,-86.36839,Southeast,road_course,active,,2026,fara;gridlife;scca,https://motorsportspark.org/,nominatim (OpenStreetMap)
+NOLA Motorsports Park,11075 Nicolle Boulevard,Avondale,LA,70094,29.88549,-90.19722,South,road_course,active,,2026,gridlife;nasa;scca,https://nolamotor.com,nominatim (OpenStreetMap)
+Palmer Motorsports Park,58 W Ware Rd,Palmer,MA,01069,42.23605,-72.24442,Northeast,road_course,active,,,requested;scca,https://palmermsp.com,official/wikipedia/osm via lookup agent
+GingerMan Raceway,61414 Phoenix Rd.,South Haven,MI,49090,42.4053,-86.1419,Midwest,road_course,active,,2026,requested;gridlife;scca,https://www.gingermanraceway.com/,rush prod (curated)
+Grattan Raceway,7201 Lessiter Road NE,Belding,MI,48809,43.09538,-85.3868,Midwest,road_course,active,,2026,requested;scca,https://www.grattanraceway.com,nominatim (OpenStreetMap)
+Waterford Hills Road Racing,4770 Waterford Road,Clarkston,MI,48346,42.70897,-83.39093,Midwest,road_course,active,,2020,scca,https://waterfordhills.com,official/wikipedia/osm via lookup agent
+Brainerd International Raceway,5523 Birchdale Rd,Brainerd,MN,56401,46.41609,-94.27116,Midwest,road_course,active,,2026,requested;scca,https://www.birmn.com,nominatim (OpenStreetMap)
+Hedge Hollow Raceway,9289 NE State Route T,Adrian,MO,64720,38.396,-94.17505,Midwest,road_course,active,,2026,nasa;scca,https://www.hedgehollowraceway.com,nominatim (OpenStreetMap)
+Ozarks International Raceway,29211 MO Highway 135,Gravois Mills,MO,65037,38.27588,-92.88671,Midwest,road_course,active,,2026,requested;nasa;scca,https://www.ozarksinternationalraceway.com/,nominatim (OpenStreetMap)
+North Carolina Center for Automotive Research,310 Technology Drive,Garysburg,NC,27831,36.47899,-77.57949,Southeast,road_course,active,,,scca,,official/wikipedia/osm via lookup agent
+Motorsports Park Hastings,427 S Showboat Blvd,Hastings,NE,68901,40.57861,-98.35306,Midwest,road_course,active,,2026,nasa;scca,https://racemph.com,official/wikipedia/osm via lookup agent
+Club Motorsports,780 Ossipee Mountain Highway,Tamworth,NH,03886,43.821,-71.24521,Northeast,road_course,active,,,requested,https://clubmotorsports.com,nominatim (OpenStreetMap)
+New Jersey Motorsports Park,8000 Dividing Creek Rd.,Millville,NJ,08332,39.36036,-75.06632,Northeast,road_course,active,,2026,gridlife;imsa;nasa;scca,https://njmp.com/,nominatim (OpenStreetMap)
+Las Vegas Motor Speedway Outside Road Course,8 Checkered Flag Lane,Las Vegas,NV,89115,36.26685,-115.01789,West,road_course,active,,,requested;scca,https://www.lvms.com,official/wikipedia/osm via lookup agent
+Watkins Glen International,2790 County Route 16,Watkins Glen,NY,14891,42.3369,-76.9272,Northeast,road_course,active,,2026,gridlife;imsa;nasa;scca,https://www.theglen.com,rush prod (curated)
+Mid-Ohio Sports Car Course,7721 Steam Corners Road,Lexington,OH,44904,40.6892,-82.6356,Midwest,road_course,active,,2026,gridlife;imsa;nasa;scca,https://www.midohio.com,rush prod (curated)
+Nelson Ledges Road Course,10342 Ohio 305,Garrettsville,OH,44231,41.3054,-81.01637,Midwest,road_course,active,,2026,requested;scca,http://www.nelsonledges.com,nominatim (OpenStreetMap)
+Hallett Motor Racing Circuit,59901 E. 5500 Rd,Jennings,OK,74038,36.21996,-96.59353,South,road_course,active,,2026,requested;nasa;scca,http://www.hallettracing.net,nominatim (OpenStreetMap)
+Oregon Raceway Park,93811 Blagg Ln,Grass Valley,OR,97029,45.37016,-120.74347,West,road_course,active,,2026,nasa,https://oregonraceway.com,nominatim (OpenStreetMap)
+Portland International Raceway,1940 N Victory Blvd,Portland,OR,97217,45.59694,-122.69583,West,road_course,active,,2026,imsa;nasa;scca,https://portlandraceway.com/,rush prod (curated)
+Pocono Raceway,1234 Long Pond Road,Blakeslee,PA,18610,41.0611,-75.5084,Northeast,road_course,active,,2023,requested;scca,https://www.poconoraceway.com,official/wikipedia/osm via lookup agent
+Carolina Motorsports Park,3662 Kershaw Highway,Kershaw,SC,29067,34.48881,-80.59508,Southeast,road_course,active,,2026,gridlife;nasa;scca,https://carolinamotorsportspark.com,nominatim (OpenStreetMap)
+Circuit of the Americas,9201 Circuit of The Americas Blvd,Austin,TX,78617,30.1328,-97.6411,South,road_course,active,,2024,gridlife;imsa;nasa;scca,https://circuitoftheamericas.com/,rush prod (curated)
+Eagles Canyon Raceway,7629 North FM-51,Decatur,TX,76234,33.2376,-97.3553,South,road_course,active,,2026,requested;nasa;scca,https://eaglescanyon.com,rush prod (curated)
+Harris Hill Raceway,2840 Harris Hill Rd,San Marcos,TX,78666,29.91889,-97.87326,South,road_course,active,,,requested,http://harrishillroad.com/,official/wikipedia/osm via lookup agent
+MSR Cresson,9012 Performance Court,Cresson,TX,76035,32.52317,-97.61156,South,road_course,active,,2026,requested;nasa;scca,https://www.motorsportranch.com/,nominatim (OpenStreetMap)
+MSR Houston,1 Performance Drive,Angleton,TX,77515,29.1933,-95.4205,South,road_course,active,,2026,requested;nasa;scca,https://msrhouston.com,rush prod (curated)
+Utah Motorsports Campus,512 Sheep Lane,Grantsville,UT,84074,40.58005,-112.37906,West,road_course,active,,2026,imsa;nasa;scca,https://utahmotorsportscampus.com,nominatim (OpenStreetMap)
+Dominion Raceway,6501 Dominion Raceway Ave,Thornburg,VA,22580,38.13808,-77.50376,Southeast,oval,active,,,requested,https://www.dominionraceway.com/,nominatim (OpenStreetMap)
+Virginia International Raceway,1245 Pine Tree Road,Alton,VA,24520,36.56167,-79.20472,Southeast,road_course,active,,2026,imsa;nasa;scca,https://virnow.com/,rush prod (curated)
+Pacific Raceways,31001 144th Avenue SE,Kent,WA,98042,47.32006,-122.14517,West,road_course,active,,2026,requested;nasa;scca,https://pacificraceways.com,rush prod (curated)
+The Ridge Motorsports Park,1060 W Eells Hill Rd,Shelton,WA,,47.25461,-123.1917,West,road_course,active,,2026,nasa;scca,https://www.ridgemotorsportspark.com,nominatim (OpenStreetMap)
+Road America,N7390 Hwy 67,Plymouth,WI,53073,43.798,-87.989,Midwest,road_course,active,,2026,gridlife;imsa;scca,https://www.roadamerica.com,rush prod (curated)
+Summit Point Motorsports Park,201 Motorsports Park Circle,Summit Point,WV,25446,39.23779,-77.96909,Southeast,road_course,active,,2026,gridlife;nasa;scca,http://summitpointmp.com/,nominatim (OpenStreetMap)
+Phoenix Raceway,West Jimmie Johnson Drive,Avondale,AZ,85353,33.37463,-112.31083,West,road_course,excluded,oval,2006,imsa,,nominatim (OpenStreetMap)
+Radford Racing Center,,,AZ,,,,West,road_course,excluded,no coordinates,2026,nasa,,
+Auto Club Speedway,Whittram Avenue,Kaiser,CA,92335,34.09349,-117.49864,West,road_course,excluded,closed,2021,imsa;nasa;scca,,nominatim (OpenStreetMap)
+Crows Landing Naval Auxiliary Air Station,,,CA,,,,West,road_course,excluded,no coordinates,1967,scca,,
+Long Beach Street Circuit,East Seaside Way,Long Beach,CA,90802,33.76569,-118.18613,West,road_course,excluded,street circuit,2026,imsa,,nominatim (OpenStreetMap)
+Riverside International Raceway,,,CA,,,,West,road_course,excluded,no coordinates,1972,scca,,
+Continental Divide Raceway,,,CO,,39.33333,-104.88472,West,road_course,excluded,closed 1983,1968,scca,,official/wikipedia/osm via lookup agent
+La Junta Raceway,Railroad Street,La Junta Village,CO,,38.04277,-103.52093,West,road_course,unverified,no evidence of a 2022+ event; not seeded,2020,scca,,nominatim (OpenStreetMap)
+Pikes Peak International Raceway,16650 Midway Ranch Rd,Fountain,CO,80817,38.59318,-104.67769,West,road_course,excluded,closing: 2026 is the final season (oval closes 18 Oct 2026),2022,gridlife,https://www.ppir.com/,nominatim (OpenStreetMap)
+Jennings GP,CR 143,Jennings,FL,32053,30.57605,-83.15702,Southeast,road_course,unverified,no evidence of a 2022+ event; not seeded,,requested,,nominatim (OpenStreetMap)
+Palm Beach International Raceway,17047 Bee Line Highway,Jupiter,FL,33478,26.91971,-80.30609,Southeast,road_course,unverified,no evidence of a 2022+ event; not seeded,,requested,,nominatim (OpenStreetMap)
+Streets of St. Petersburg,,,FL,,,,Southeast,road_course,excluded,no coordinates,2026,imsa,,
+Iowa Speedway,Iowa Speedway Drive,Newton,IA,50208,41.69123,-93.01352,Midwest,road_course,excluded,oval,2018,scca,,nominatim (OpenStreetMap)
+Meadowdale International Raceway,,,IL,,,,Midwest,road_course,excluded,no coordinates,1968,scca,,
+Putnam Park Road Course,East County Road 550 South,Putnam County,IN,46135,39.58417,-86.7446,Midwest,road_course,unverified,no evidence of a 2022+ event; not seeded,2020,requested;scca,,nominatim (OpenStreetMap)
+Heartland Motorsports Park,7530 Southwest Topeka Boulevard,Topeka,KS,66619,38.92732,-95.6734,Midwest,road_course,excluded,"closed: CLOSED. Closed Sept 19 2023; IHRA bought it Dec 30 2025, then cancelled all remaining events July 2026 and the property was listed f",2023,gridlife;scca,http://heartlandpark.com/,nominatim (OpenStreetMap)
+Kansas Speedway,400 Speedway Boulevard,Kansas City,KS,66111,39.11581,-94.8306,Midwest,road_course,excluded,oval,2014,imsa,,nominatim (OpenStreetMap)
+Baltimore Street Circuit,,,MD,,,,Northeast,road_course,excluded,no coordinates,2013,imsa,,
+Marlboro Motor Raceway,6000 Maude Savoy Brown Rd (along Crain Hwy),Upper Marlboro,MD,20772,38.8071,-76.739,Northeast,road_course,excluded,closed 1969,1967,scca,,official/wikipedia/osm via lookup agent
+Detroit Street Circuit,,,MI,,,,Midwest,road_course,excluded,no coordinates,2026,imsa,,
+Michigan International Speedway,12626 Cambridge Junction Historic Sp,Brooklyn,MI,49230,42.06566,-84.24221,Midwest,road_course,excluded,oval,1971,scca,,nominatim (OpenStreetMap)
+The Raceway on Belle Isle,,,MI,,,,Midwest,road_course,excluded,no coordinates,2022,imsa,,
+Charlotte Motor Speedway,Pedestrian Bridge,Concord,NC,28075,35.3475,-80.68327,Southeast,road_course,unverified,no evidence of a 2022+ event; not seeded,2020,imsa;scca,,nominatim (OpenStreetMap)
+Bryar Motorsports Park,,,NH,,,,Northeast,road_course,excluded,no coordinates,1972,scca,,
+New Hampshire Motor Speedway,Inside Track Road,Loudon,NH,03507,43.36558,-71.45894,Northeast,road_course,unverified,no evidence of a 2022+ event; not seeded,,requested;scca,,nominatim (OpenStreetMap)
+Spring Mountain Motorsports Ranch,Frontage Road,Pahrump,NV,,36.17375,-115.90952,West,road_course,unverified,no evidence of a 2022+ event; not seeded,,requested,,nominatim (OpenStreetMap)
+Stardust International Raceway,,,NV,,,,West,road_course,excluded,no coordinates,1967,scca,,
+Bridgehampton Race Circuit,Bridgehampton Race Circuit,Town of Southampton,NY,11963,40.97863,-72.34031,Northeast,road_course,unverified,no evidence of a 2022+ event; not seeded,1970,scca,,nominatim (OpenStreetMap)
+War Bonnet Raceway Park,,,OK,,36.15389,-96.36317,South,road_course,excluded,closed 1970,1968,scca,,official/wikipedia/osm via lookup agent
+Pittsburgh International Race Complex,201 Penndale Road,Wampum,PA,16157,40.84797,-80.34724,Northeast,road_course,excluded,"closed: CLOSED Nov 30 2025; ~400 acres sold for $50M, being converted to a data center (search summary of hoodline/Hagerty/Roadracing World)",2025,gridlife;nasa;scca,https://pittrace.com,nominatim (OpenStreetMap)
+Green Valley Raceway,,North Richland Hills,TX,76182,32.89989,-97.21221,South,road_course,unverified,no evidence of a 2022+ event; not seeded,1967,scca,,nominatim (OpenStreetMap)
+Reliant Park,3134 Old Spanish Trail,Houston,TX,77054,29.69987,-95.37829,South,road_course,excluded,temporary circuit,2008,imsa,,nominatim (OpenStreetMap)
+Texas Motor Speedway,3545 Lone Star Circle,Fort Worth,TX,76177,33.03712,-97.28163,South,road_course,excluded,oval,2019,nasa,,nominatim (OpenStreetMap)
+Texas World Speedway,,,TX,,,,South,road_course,excluded,no coordinates,2017,requested;nasa;scca,,
