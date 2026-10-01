@@ -164,7 +164,7 @@ function registerSessions(server: McpServer, env: Env): void {
 }
 
 export function createServer(env: Env): McpServer {
-  const server = new McpServer({ name: "rush-sr-laps", version: "0.1.0" });
+  const server = new McpServer({ name: "rush-sr-laps", version: "0.2.0" });
   registerAnalysis(server, env);
   registerComparison(server, env);
   registerLoss(server, env);
