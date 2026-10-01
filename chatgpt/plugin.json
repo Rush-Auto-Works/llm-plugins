@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "description": "Rush SR maintenance answers from the owner's manual, and lap analysis for AiM RaceStudio data.",
   "author": { "name": "RUSH Auto Works Inc", "url": "https://rushautoworks.com" },
-  "homepage": "https://rushautoworks.com/rush-sr/",
+  "homepage": "https://rushautoworks.com/ai-assistants/",
   "repository": "https://github.com/Rush-Auto-Works/llm-plugins",
   "license": "MIT",
   "keywords": ["rush sr", "maintenance", "owner's manual", "lap analysis", "aim", "racestudio", "motorsport"],
@@ -17,7 +17,7 @@
         "developerName": "RUSH Auto Works Inc",
         "category": "Productivity",
         "capabilities": ["Read"],
-        "websiteURL": "https://rushautoworks.com/rush-sr/",
+        "websiteURL": "https://rushautoworks.com/ai-assistants/",
         "privacyPolicyURL": "https://rushautoworks.com/privacy-policy/",
         "termsOfServiceURL": "https://rushautoworks.com/terms-and-conditions/",
         "defaultPrompt": [

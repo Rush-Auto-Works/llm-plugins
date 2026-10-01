@@ -13,7 +13,7 @@ What to submit, where, and with what text. The copy is data, so tests keep it ho
 
 | Submission | Source of every field | Before you start |
 |---|---|---|
-| Claude connector, laps | `listing/claude-connectors.json` → `laps` | privacy policy updated, support mailbox |
+| Claude connector, laps | `listing/claude-connectors.json` → `laps` | the site pages above are live |
 | Claude connector, maintenance | `listing/claude-connectors.json` → `maintenance` | same |
 | Claude plugin | read from `plugin/.claude-plugin/plugin.json` and `plugin/README.md` | both connectors submitted first, repo public (it is) |
 | ChatGPT plugin | `chatgpt/plugin.json`, `listing/chatgpt-test-cases.json` | OpenAI verification, owner role, a screen recording |
@@ -54,4 +54,4 @@ curl -s "https://registry.modelcontextprotocol.io/v0.1/servers?search=sr.rush"
 
 ## Website text
 
-`listing/website/` has drafts for the pages on rushautoworks.com that both submissions link to: a plugins section for the privacy policy, a terms clause, and the `/rush-sr/` page. They are text for you to paste into WordPress, and they say only what the code does today.
+The pages both submissions link to are live content in the `rushautoworks` repo (PR 567): a plugins section in https://rushautoworks.com/privacy-policy/ (with a last-updated date), a clause in https://rushautoworks.com/terms-and-conditions/, and https://rushautoworks.com/ai-assistants/, which is the documentation and website URL in every listing. Content pages are pushed to WordPress with `scripts/sync-content.sh push prod <slug>`; a merge alone does not publish them.
