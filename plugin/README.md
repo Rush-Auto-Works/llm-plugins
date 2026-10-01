@@ -22,3 +22,7 @@ Ask "why won't my Rush SR start" or "how do I bleed the brakes" and Claude calls
 - Every result ends with a link to rushautoworks.com that carries UTM parameters, so Rush Auto Works can see which tool sent the visit.
 
 `scripts/engine.mjs` is generated from `servers/laps` in the same repository by `npm run build:skill`, and a CI check fails if it drifts from the source.
+
+## Directory listing fields
+
+`plugin.json` carries `homepage`, `documentationUrl`, `repository`, `supportUrl`, `termsOfServiceUrl` and `privacyPolicyUrl` for the Claude plugin directory, which reads them for the listing. Claude Code ignores keys it does not know, so they change nothing at load time.
