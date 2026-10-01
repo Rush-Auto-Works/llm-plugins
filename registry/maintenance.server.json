@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "websiteUrl": "https://rushautoworks.com/rush-sr/",
+  "name": "sr.rush/maintenance",
+  "title": "Rush SR Maintenance",
+  "description": "Rush SR owner's manual: diagnose a symptom, find service intervals and repair procedures.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/Rush-Auto-Works/llm-plugins",
+    "source": "github",
+    "subfolder": "servers/maintenance"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://maintenance.mcp.rush.sr/mcp"
+    }
+  ]
+}
