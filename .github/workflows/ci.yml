@@ -46,7 +46,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install numpy
-      - run: python3 -W error -m unittest discover -s plugin/skills/rush-sr-laps/tests
+      - run: python3 -W error -m unittest discover -s tests
 
   packages:
     runs-on: ubicloud-standard-2
