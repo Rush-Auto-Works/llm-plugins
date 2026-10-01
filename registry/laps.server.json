@@ -1,0 +1,19 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "websiteUrl": "https://rushautoworks.com/rush-sr/",
+  "name": "sr.rush/lap-analyzer",
+  "title": "Rush SR Lap Analyzer",
+  "description": "Analyze AiM RaceStudio lap data: lap times, compare laps, time loss, compare two sessions.",
+  "version": "0.2.0",
+  "repository": {
+    "url": "https://github.com/Rush-Auto-Works/llm-plugins",
+    "source": "github",
+    "subfolder": "servers/laps"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://laps.mcp.rush.sr/mcp"
+    }
+  ]
+}
