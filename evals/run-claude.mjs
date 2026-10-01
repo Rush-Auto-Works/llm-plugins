@@ -45,7 +45,8 @@ writeFileSync(mcpConfig, JSON.stringify({
   },
 }));
 
-const expand = (text) => text.replaceAll('{{CSV_A}}', csvA).replaceAll('{{CSV_B}}', csvB);
+// Function replacements: a string replacement would interpret $& and $' inside the CSV.
+const expand = (text) => text.replaceAll('{{CSV_A}}', () => csvA).replaceAll('{{CSV_B}}', () => csvB);
 
 function runOne(item) {
   const args = [
@@ -62,32 +63,45 @@ function runOne(item) {
     let stderr = '';
     child.stdout.on('data', (data) => { stdout += data; });
     child.stderr.on('data', (data) => { stderr += data; });
-    const timer = setTimeout(() => child.kill('SIGKILL'), 180_000);
-    child.on('close', (code) => {
+    let settled = false;
+    const finish = (code, failure) => {
+      if (settled) return;
+      settled = true;
       clearTimeout(timer);
-      resolve({ item, called: toolCalls(stdout), ms: Date.now() - started, code, error: code === 0 ? '' : stderr.slice(0, 300) });
-    });
+      const { called, down } = parseRun(stdout);
+      const error = failure ?? (code !== 0 ? `exit ${code}: ${stderr.slice(0, 200).replaceAll('\n', ' ')}` : down.length ? `connector not connected: ${down.join(', ')}` : '');
+      resolve({ item, called, ms: Date.now() - started, code, error });
+    };
+    const timer = setTimeout(() => { child.kill('SIGKILL'); finish(null, 'timed out after 180 s'); }, 180_000);
+    child.on('error', (error) => finish(null, `could not start ${bin}: ${error.message}`));
+    child.on('close', (code) => finish(code));
   });
 }
 
-// Every tool call in order. Our tools arrive as mcp__<server>__<tool>; keep the tool part. Anything else (WebSearch)
-// keeps its name, so a competing tool called first shows up as a miss.
-function toolCalls(stdout) {
+// Every tool call in order, plus any of our connectors that did not connect. Our tools arrive as
+// mcp__<server>__<tool>; keep the tool part. Anything else (WebSearch) keeps its name, so a competing tool called first
+// shows up as a miss. "No tool called" only means something when both connectors were up.
+function parseRun(stdout) {
   const called = [];
+  const down = [];
   for (const line of stdout.split('\n')) {
     let event;
     try { event = JSON.parse(line); } catch { continue; }
+    if (event.type === 'system' && event.subtype === 'init') {
+      for (const server of event.mcp_servers ?? []) if (server.status !== 'connected') down.push(server.name);
+    }
     if (event.type !== 'assistant') continue;
     for (const block of event.message?.content ?? []) {
       if (block.type === 'tool_use') called.push(block.name.startsWith('mcp__rush-sr-') ? block.name.split('__').pop() : block.name);
     }
   }
-  return called;
+  return { called, down };
 }
 
 const ours = (called) => called.filter((name) => set.tools.includes(name));
 
-function passes({ item, called }) {
+function passes({ item, called, error }) {
+  if (error) return false;
   if (!item.expect) return ours(called).length === 0;
   return called[0] === item.expect || (item.accept ?? []).includes(called[0]);
 }
@@ -109,7 +123,8 @@ async function pool(items, size, work) {
 
 const ratio = (hits, total) => (total ? `${hits}/${total} (${Math.round((100 * hits) / total)}%)` : 'n/a');
 
-function summary(results) {
+function summary(all) {
+  const results = all.filter((row) => !row.error);
   const lines = ['| group | pass |', '|---|---|'];
   for (const kind of [...new Set(set.prompts.map((item) => item.kind))]) {
     const rows = results.filter((row) => row.item.kind === kind);
@@ -122,12 +137,13 @@ function summary(results) {
     const good = firstCalls.filter((row) => row.item.expect === tool || (row.item.accept ?? []).includes(tool));
     lines.push(`| ${tool} | ${ratio(wanted.filter(passes).length, wanted.length)} | ${ratio(good.length, firstCalls.length)} |`);
   }
+  if (all.length !== results.length) lines.push('', `**${all.length - results.length} of ${all.length} runs errored and are not counted above. Fix the cause and re-run.**`);
   return lines.join('\n');
 }
 
 function table(results) {
   const rows = results.map((row) => {
-    const status = row.code !== 0 ? `ERROR ${row.error.replaceAll('\n', ' ')}` : passes(row) ? 'pass' : 'FAIL';
+    const status = row.error ? `ERROR ${row.error}` : passes(row) ? 'pass' : 'FAIL';
     const first = row.item.prompt.split('\n')[0].slice(0, 70).replaceAll('|', '/');
     return `| ${row.item.id} | ${row.item.kind} | ${row.item.expect ?? 'none'} | ${row.called.join(', ') || 'none'} | ${status} | ${first} |`;
   });
@@ -148,5 +164,6 @@ const report = [
   '',
 ].join('\n');
 writeFileSync(out, report);
-writeFileSync(out.replace(/\.md$/, '.json'), `${JSON.stringify(results.map((row) => ({ id: row.item.id, kind: row.item.kind, expect: row.item.expect ?? null, called: row.called, pass: passes(row), ms: row.ms, code: row.code })), null, 2)}\n`);
+writeFileSync(out.replace(/\.md$/, '.json'), `${JSON.stringify(results.map((row) => ({ id: row.item.id, kind: row.item.kind, expect: row.item.expect ?? null, called: row.called, pass: passes(row), error: row.error || null, ms: row.ms, code: row.code })), null, 2)}\n`);
 console.log(report);
+if (results.some((row) => row.error)) process.exitCode = 1;
