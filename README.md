@@ -37,7 +37,7 @@ npm test                 # boots wrangler dev and runs the E2E suite
 npm run build:skill      # laps only: regenerates plugin/skills/rush-sr-laps/scripts/engine.mjs
 ```
 
-The converter tests need `numpy` and run with `python3 -m unittest discover -s plugin/skills/rush-sr-laps/tests`. CI fails if `engine.mjs` drifts from the source.
+The converter tests need `numpy` and run with `python3 -m unittest discover -s tests`. CI fails if `engine.mjs` drifts from the source.
 
 Design notes are in `docs/`: platform findings, and a plan with a failure matrix for each server and for the skill.
 

@@ -13,7 +13,7 @@ import textwrap
 import unittest
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-CONVERT = os.path.join(HERE, "..", "scripts", "convert.py")
+CONVERT = os.path.join(HERE, "..", "plugin", "skills", "rush-sr-laps", "scripts", "convert.py")
 
 STUB = textwrap.dedent('''
     import os
