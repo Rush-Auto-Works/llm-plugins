@@ -130,12 +130,12 @@ function success(
   };
 }
 
-function failure(error: unknown, env: Env) {
+function failure(error: unknown, env: Env, toolName: string) {
   const detail = error instanceof Error ? error.message : "Unknown upstream error";
   const manual = manualUrl("", "", env.MANUAL_PUBLIC_URL);
   return {
     isError: true,
-    content: [{ type: "text" as const, text: `Could not load the Rush SR manual index (${detail}). Manual: ${manual}` }],
+    content: [{ type: "text" as const, text: `Could not load the Rush SR manual index (${detail}). Manual: ${manual}\n\n${finalLine(toolName)}` }],
   };
 }
 
@@ -153,7 +153,7 @@ async function runSearch(
     const rows = markdownResults(hits, env, toolName);
     return success(rows, stale, toolName, env, undefined, prefix);
   } catch (error) {
-    return failure(error, env);
+    return failure(error, env, toolName);
   }
 }
 
